@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Kettlebell Interval",
+    "slug": "kettlebell-interval-runner",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#08121B"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#08121B"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": true
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-audio"
+    ]
+  }
+}

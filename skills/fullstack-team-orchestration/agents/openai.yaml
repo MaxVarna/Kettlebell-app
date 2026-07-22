@@ -1,0 +1,4 @@
+interface:
+  display_name: "Full-stack Architecture Team"
+  short_description: "Coordinate architect, executor, reviewer, and deployer"
+  default_prompt: "Use $fullstack-team-orchestration to deliver this full-stack change through architect, executor, reviewer, and deployer roles."

@@ -1,0 +1,14 @@
+node_modules/
+.expo/
+.verification-expo/
+.verification-expo-ios/
+dist/
+*.log
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+audit/tools/
+
+# Intermediate image-generation assets are reproducible and not shipped.
+apps/mobile/assets/movements/*-chroma.png

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kettlebell Interval — редизайн экрана тренировки (концепт)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f1efe8; color: #1f1f1f;
+         min-height: 100vh; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 32px 16px; }
+  .caption { font-size: 14px; color: #6b6b66; text-align: center; max-width: 340px; }
+  .phone { width: 320px; border-radius: 32px; border: 9px solid #1f1f1f; overflow: hidden; background: #D3D1C7;
+           transition: background .35s ease; box-shadow: 0 12px 40px rgba(0,0,0,.18); }
+  .screen { padding: 18px 18px 22px; display: flex; flex-direction: column; min-height: 500px; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; }
+  .cycle { font-size: 13px; color: rgba(0,0,0,.55); }
+  .sound { display: flex; align-items: center; gap: 5px; font-size: 13px; color: rgba(0,0,0,.7);
+           border: .5px solid rgba(0,0,0,.25); border-radius: 999px; padding: 6px 11px; background: transparent; cursor: pointer; }
+  .center { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; gap: 4px; padding: 22px 0; }
+  .illo { width: 116px; height: 116px; border-radius: 50%; background: rgba(255,255,255,.45);
+          display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .illo i { font-size: 56px; color: #1f1f1f; }
+  .phase { font-size: 28px; font-weight: 600; letter-spacing: .5px; color: #2C2C2A; }
+  .move { font-size: 14px; color: rgba(0,0,0,.6); }
+  .timer { font-size: 78px; font-weight: 600; line-height: 1.05; color: #1f1f1f; font-variant-numeric: tabular-nums; }
+  .track { width: 100%; height: 6px; border-radius: 999px; background: rgba(0,0,0,.15); margin-top: 8px; overflow: hidden; }
+  .bar { height: 100%; width: 35%; background: #1f1f1f; border-radius: 999px; transition: width .35s ease; }
+  .controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .round { width: 56px; height: 56px; border-radius: 50%; border: .5px solid rgba(0,0,0,.3);
+           background: rgba(255,255,255,.4); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  .round i { font-size: 24px; color: #1f1f1f; }
+  .primary { flex: 1; height: 56px; border-radius: 15px; border: none; background: #1f1f1f; color: #fff;
+             font-size: 17px; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; }
+  .primary i { font-size: 21px; }
+  .next { text-align: center; font-size: 12px; color: rgba(0,0,0,.5); margin-top: 12px; }
+  .switcher { display: flex; gap: 8px; width: 320px; }
+  .pbtn { flex: 1; height: 42px; border-radius: 10px; border: .5px solid rgba(0,0,0,.25); background: #fff;
+          font-size: 14px; cursor: pointer; }
+  .pbtn:hover { background: #f3f1ea; }
+</style>
+</head>
+<body>
+
+  <p class="caption">Концепт экрана активной тренировки. Кнопки внизу переключают фазу — фон всего экрана меняется для читаемости с расстояния.</p>
+
+  <div class="phone" id="phone">
+    <div class="screen">
+      <div class="topbar">
+        <span class="cycle" id="cycle">Цикл 1 / 3</span>
+        <button class="sound"><i class="ti ti-volume" aria-hidden="true"></i>Звук</button>
+      </div>
+
+      <div class="center">
+        <div class="illo"><i class="ti ti-run" aria-hidden="true"></i></div>
+        <div class="phase" id="phaseLabel">Подготовка</div>
+        <div class="move" id="move">Двуручный свинг</div>
+        <div class="timer" id="timer">00:10</div>
+        <div class="track"><div class="bar" id="bar"></div></div>
+      </div>
+
+      <div class="controls">
+        <button class="round" aria-label="Предыдущий интервал"><i class="ti ti-player-skip-back" aria-hidden="true"></i></button>
+        <button class="primary"><i class="ti ti-player-pause" aria-hidden="true"></i>Пауза</button>
+        <button class="round" aria-label="Следующий интервал"><i class="ti ti-player-skip-forward" aria-hidden="true"></i></button>
+      </div>
+      <div class="next" id="next">Дальше · Работа 30с</div>
+    </div>
+  </div>
+
+  <div class="switcher">
+    <button class="pbtn" data-p="prep">Подготовка</button>
+    <button class="pbtn" data-p="work">Работа</button>
+    <button class="pbtn" data-p="rest">Отдых</button>
+  </div>
+
+<script>
+  const phases = {
+    prep: { bg:'#D3D1C7', text:'#2C2C2A', label:'Подготовка', timer:'00:10', bar:'35%', next:'Дальше · Работа 30с', cycle:'Цикл 1 / 3' },
+    work: { bg:'#F0997B', text:'#4A1B0C', label:'Работа',     timer:'00:30', bar:'70%', next:'Дальше · Отдых 20с',  cycle:'Цикл 1 / 3' },
+    rest: { bg:'#5DCAA5', text:'#04342C', label:'Отдых',      timer:'00:20', bar:'50%', next:'Дальше · Работа 30с', cycle:'Цикл 2 / 3' }
+  };
+  function set(p){
+    const d = phases[p];
+    phone.style.background = d.bg;
+    phaseLabel.textContent = d.label; phaseLabel.style.color = d.text;
+    timer.textContent = d.timer; bar.style.width = d.bar;
+    next.textContent = d.next; cycle.textContent = d.cycle;
+  }
+  document.querySelectorAll('.pbtn').forEach(b => b.addEventListener('click', () => set(b.dataset.p)));
+</script>
+</body>
+</html>

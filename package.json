@@ -1,0 +1,21 @@
+{
+  "name": "kettlebell-app",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "mobile:start": "npm run start --workspace=@kettlebell/mobile",
+    "mobile:typecheck": "npm run typecheck --workspace=@kettlebell/mobile",
+    "mobile:test": "npm run test --workspace=@kettlebell/mobile",
+    "mobile:export:android": "npm run export:android --workspace=@kettlebell/mobile",
+    "typecheck": "npm run mobile:typecheck",
+    "test": "npm run mobile:test"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "~5.9.2"
+  }
+}

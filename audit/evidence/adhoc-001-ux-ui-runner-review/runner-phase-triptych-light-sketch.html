@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Runner — светлая тема: подготовка, работа, отдых</title>
+  <style>
+    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 1160px; background: #f6f7f6; color: #121a20; }
+    main { width: 1112px; margin: 0 auto; padding: 56px 0 70px; }
+    h1 { margin: 0; font-size: 32px; letter-spacing: -.55px; }
+    .intro { max-width: 690px; margin: 14px 0 38px; color: #53626b; font-size: 16px; line-height: 1.5; }
+    .row { display: flex; gap: 28px; }.case { width: 352px; --phase: #bf862d; --phase-fill: rgb(191 134 45 / 18%); }.case h2 { margin: 0 0 16px; font-size: 18px; }.case h2 span { color: var(--phase); }
+    .phone { position: relative; height: 720px; overflow: hidden; padding: 34px 24px 26px; border: 8px solid #11181d; border-radius: 42px; background: #fff; box-shadow: 0 8px 18px rgb(18 26 32 / 16%); }
+    .phone::before { content: ""; position: absolute; top: 12px; left: 50%; width: 102px; height: 20px; border-radius: 14px; background: #11181d; transform: translateX(-50%); }
+    .top { display: flex; justify-content: space-between; color: #53626b; font-size: 12px; font-weight: 700; letter-spacing: .8px; }
+    .figure { position: relative; height: 254px; display: flex; align-items: center; justify-content: center; }.halo { position: absolute; width: 132px; height: 132px; border: 1px solid var(--phase); border-radius: 50%; background: var(--phase-fill); }.figure img { position: relative; z-index: 1; width: 78%; height: 86%; object-fit: contain; }
+    .movement { position: relative; z-index: 2; margin-top: -32px; color: #121a20; text-align: center; font-size: 18px; font-weight: 700; }.timer { margin-top: 28px; padding: 20px 0 18px; border-top: 1px solid #d1dbde; border-bottom: 1px solid #d1dbde; text-align: center; }.phase { color: var(--phase); font-size: 28px; font-weight: 750; letter-spacing: .4px; line-height: 1; }.time { margin-top: 12px; color: #121a20; font-size: 68px; font-weight: 300; font-variant-numeric: tabular-nums; letter-spacing: -2.6px; line-height: .95; }.progress { height: 4px; margin-top: 20px; background: #dce4e5; }.progress span { display: block; width: 56%; height: 100%; background: var(--phase); }
+    .next { margin-top: 23px; color: #63727c; font-size: 12px; font-weight: 700; letter-spacing: 1px; }.next strong { display: block; margin-top: 7px; color: #121a20; font-size: 16px; letter-spacing: 0; }.controls { position: absolute; right: 24px; bottom: 26px; left: 24px; display: flex; gap: 12px; }.pause { flex: 1; padding: 17px 0; border-radius: 14px; background: #bf862d; color: #1a1f22; text-align: center; font-size: 16px; font-weight: 750; }.stop { display: flex; width: 74px; align-items: center; justify-content: center; border-radius: 14px; background: #e9eef0; color: #121a20; font-size: 13px; font-weight: 700; }
+    .prep { --phase: #638398; --phase-fill: rgb(99 131 152 / 18%); }.work { --phase: #bf862d; --phase-fill: rgb(191 134 45 / 18%); }.rest { --phase: #4f937e; --phase-fill: rgb(79 147 126 / 18%); }.caption { margin-top: 13px; color: #53626b; font-size: 14px; line-height: 1.45; }.caption b { color: #121a20; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Светлая тема: фаза заметна, но экран остаётся лёгким</h1>
+    <p class="intro">Тот же принцип, что и в тёмной теме: цвет принадлежит фазе, а не всей поверхности. Белое пространство остаётся нейтральным и спокойным.</p>
+    <section class="row">
+      <article class="case prep"><h2><span>01</span> · Подготовка</h2><div class="phone"><div class="top"><span>ЦИКЛ 1 / 3</span><span>СВИНГ</span></div><div class="figure"><span class="halo"></span><img src="file:///C:/Users/Максим/Documents/Приложение%20для%20гиревых%20тренировок/assets/movements/swing-top.png" alt="Двуручный свинг" /></div><div class="movement">Двуручный свинг</div><div class="timer"><div class="phase">ПОДГОТОВКА</div><div class="time">00:10</div><div class="progress"><span></span></div></div><div class="next">ДАЛЬШЕ<strong>Работа</strong></div><div class="controls"><div class="pause">Пауза</div><div class="stop">Завершить</div></div></div><p class="caption"><b>Стальной.</b> Состояние настройки перед движением.</p></article>
+      <article class="case work"><h2><span>02</span> · Работа</h2><div class="phone"><div class="top"><span>ЦИКЛ 1 / 3</span><span>СВИНГ</span></div><div class="figure"><span class="halo"></span><img src="file:///C:/Users/Максим/Documents/Приложение%20для%20гиревых%20тренировок/assets/movements/swing-top.png" alt="Двуручный свинг" /></div><div class="movement">Двуручный свинг</div><div class="timer"><div class="phase">РАБОТА</div><div class="time">00:20</div><div class="progress"><span></span></div></div><div class="next">ДАЛЬШЕ<strong>Отдых</strong></div><div class="controls"><div class="pause">Пауза</div><div class="stop">Завершить</div></div></div><p class="caption"><b>Янтарный.</b> Активный интервал и действие.</p></article>
+      <article class="case rest"><h2><span>03</span> · Отдых</h2><div class="phone"><div class="top"><span>ЦИКЛ 1 / 3</span><span>СВИНГ</span></div><div class="figure"><span class="halo"></span><img src="file:///C:/Users/Максим/Documents/Приложение%20для%20гиревых%20тренировок/assets/movements/swing-top.png" alt="Двуручный свинг" /></div><div class="movement">Двуручный свинг</div><div class="timer"><div class="phase">ОТДЫХ</div><div class="time">00:20</div><div class="progress"><span></span></div></div><div class="next">ДАЛЬШЕ<strong>Двуручный свинг</strong></div><div class="controls"><div class="pause">Пауза</div><div class="stop">Завершить</div></div></div><p class="caption"><b>Зелёный.</b> Восстановление без избыточной сигнализации.</p></article>
+    </section>
+  </main>
+</body>
+</html>
