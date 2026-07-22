@@ -1,3 +1,7 @@
+import type { ImageSourcePropType } from 'react-native';
+import { generatedExerciseRecords, generatedExerciseVisuals } from './generated/exerciseCatalogue.generated';
+import type { ExerciseRecordV2, ExerciseVisualSet, FigureVariant } from './exerciseCatalogue.types';
+
 export type ExerciseReviewStatus = 'pending_coach_review' | 'source_checked' | 'approved' | 'deferred';
 
 export type ExerciseRecord = {
@@ -19,13 +23,104 @@ export type ExerciseRecord = {
     zoneMap?: string;
     motionReady: boolean;
   };
+  sourceRecord?: ExerciseRecordV2;
 };
+
+const legacyExerciseVisuals: Readonly<Record<string, ExerciseVisualSet>> = {
+  'two-hand-swing': {
+    thumbnail: {
+      male: require('../../assets/movements/swing-top-anchored-v1.png'),
+      female: require('../../assets/movements/swing-top-anchored-v1.png'),
+    },
+    frames: {
+      male: [require('../../assets/movements/swing-bottom-anchored-v1.png'), require('../../assets/movements/swing-top-anchored-v1.png')],
+      female: [require('../../assets/movements/swing-bottom-anchored-v1.png'), require('../../assets/movements/swing-top-anchored-v1.png')],
+    },
+    anatomy: require('../../assets/movements/swing-zones-approved-v3.png'),
+  },
+  'goblet-squat': {
+    thumbnail: {
+      male: require('../../assets/movements/goblet-squat-standing-anchored-v1.png'),
+      female: require('../../assets/movements/goblet-squat-standing-anchored-v1.png'),
+    },
+    frames: {
+      male: [require('../../assets/movements/goblet-squat-standing-anchored-v1.png'), require('../../assets/movements/goblet-squat-bottom-anchored-v1.png')],
+      female: [require('../../assets/movements/goblet-squat-standing-anchored-v1.png'), require('../../assets/movements/goblet-squat-bottom-anchored-v1.png')],
+    },
+    anatomy: require('../../assets/movements/goblet-squat-zones.png'),
+  },
+  'clean-and-press': {
+    thumbnail: {
+      male: require('../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
+      female: require('../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
+    },
+    frames: {
+      male: [
+        require('../../assets/movements/clean-press-low-coherent-anchored-v1.png'),
+        require('../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
+        require('../../assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
+      ],
+      female: [
+        require('../../assets/movements/clean-press-low-coherent-anchored-v1.png'),
+        require('../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
+        require('../../assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
+      ],
+    },
+  },
+};
+
+const exerciseVisuals: Readonly<Record<string, ExerciseVisualSet>> = {
+  ...legacyExerciseVisuals,
+  ...generatedExerciseVisuals,
+};
+
+const fallbackVisual = legacyExerciseVisuals['two-hand-swing']!;
+
+export const exerciseThumbnail = (exerciseId: string, variant: FigureVariant): ImageSourcePropType => {
+  const visual = exerciseVisuals[exerciseId] ?? fallbackVisual;
+  return visual.thumbnail[variant] ?? visual.thumbnail.male;
+};
+
+export const exerciseFrames = (exerciseId: string, variant: FigureVariant): readonly ImageSourcePropType[] => {
+  const visual = exerciseVisuals[exerciseId] ?? fallbackVisual;
+  return visual.frames[variant] ?? visual.frames.male;
+};
+
+export const exerciseAnatomy = (exerciseId: string): ImageSourcePropType | null =>
+  exerciseVisuals[exerciseId]?.anatomy ?? null;
+
+const publishedExerciseRecords: readonly ExerciseRecordV2[] = generatedExerciseRecords;
+
+const generatedEditorialQueue: readonly ExerciseRecord[] = publishedExerciseRecords.map((record) => {
+  const thumbnailPhase = record.phases.find((phase) => phase.id === record.assets.thumbnailPhaseId) ?? record.phases[0]!;
+  return {
+    id: record.id,
+    name: record.name,
+    movementKind: record.classification.movementKind,
+    keyPose: thumbnailPhase.technique,
+    cueDrafts: record.cues.map((cue) => cue.text),
+    zoneMap: [...record.anatomy.primary, ...record.anatomy.secondary],
+    sourceUrls: record.sources.map((source) => source.url),
+    review: {
+      status: record.review.technique === 'coach_approved' ? 'approved' : 'source_checked',
+      reviewedAt: record.review.reviewedAt,
+      reviewer: record.review.reviewer,
+    },
+    assets: {
+      thumbnail: thumbnailPhase.visual.assets.male,
+      runnerStatic: thumbnailPhase.visual.assets.male,
+      zoneMap: record.anatomy.asset,
+      motionReady: record.phases.length >= 2 && record.phases.length <= 3,
+    },
+    sourceRecord: record,
+  };
+});
 
 /**
  * Editorial queue, deliberately separate from movements exposed in the builder.
  * Source-checked records are safe for the initial catalogue; a trainer can later add a deeper review.
  */
-export const exerciseEditorialQueue: readonly ExerciseRecord[] = [
+const legacyExerciseEditorialQueue: readonly ExerciseRecord[] = [
   {
     id: 'two-hand-swing',
     name: 'Двуручный свинг',
@@ -81,30 +176,11 @@ export const exerciseEditorialQueue: readonly ExerciseRecord[] = [
       motionReady: true,
     },
   },
-  {
-    id: 'kettlebell-deadlift',
-    name: 'Становая тяга с гирей',
-    movementKind: 'grind',
-    keyPose: 'Гиря между стопами; спина нейтральна, движение начинается от таза.',
-    cueDrafts: [
-      'Отведи таз назад и держи спину нейтральной.',
-      'Встань, одновременно разгибая колени и таз.',
-      'В верхней точке стой прямо — не отклоняйся назад.',
-    ],
-    zoneMap: ['ягодицы', 'задняя поверхность бедра', 'квадрицепсы', 'разгибатели позвоночника'],
-    sourceUrls: [
-      'https://dxpprod.nsca.com/contentassets/b70b70c5cb96417bbc58d5b6756a689e/ptq-8.3.1-resistance-training-progressions-for-the-older-adult-deadlifts.pdf',
-      'https://barbend.com/kettlebell-deadlift/',
-      'https://doi.org/10.1371/journal.pone.0229507',
-    ],
-    review: { status: 'approved', reviewedAt: '2026-07-22T00:00:00Z', reviewer: 'owner' },
-    assets: {
-      thumbnail: 'assets/movements/kettlebell-deadlift-stand-male-anchored-v2.png',
-      runnerStatic: 'assets/movements/kettlebell-deadlift-stand-male-anchored-v2.png',
-      zoneMap: 'assets/movements/kettlebell-deadlift-zones-v1.png',
-      motionReady: true,
-    },
-  },
+];
+
+export const exerciseEditorialQueue: readonly ExerciseRecord[] = [
+  ...legacyExerciseEditorialQueue,
+  ...generatedEditorialQueue,
 ];
 
 export const catalogueExercises = exerciseEditorialQueue.filter(

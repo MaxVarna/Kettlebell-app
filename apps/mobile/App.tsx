@@ -25,27 +25,13 @@ import { deleteScheme, listSchemes, markSchemeStarted, saveScheme } from './src/
 import type { SavedScheme } from './src/data/schemes.types';
 import { getAnimationEnabled, getFigureVariant, getShowIntro, setAnimationEnabledSetting, setFigureVariantSetting, setShowIntroSetting } from './src/data/settings';
 import type { FigureVariant } from './src/data/settings';
-import { catalogueExercises } from './src/content/exerciseCatalogue';
+import { catalogueExercises, exerciseAnatomy, exerciseFrames, exerciseThumbnail } from './src/content/exerciseCatalogue';
 import type { ExerciseRecord } from './src/content/exerciseCatalogue';
 import { pause, reconcile, remainingSeconds, resume, skip, start } from './src/runner/engine';
 import type { Movement, RunnerPhase, RunnerScheme, RunnerState } from './src/runner/types';
 import { framePlaybackOrder, nextPlaybackCursor } from './src/motion/framePlayback';
 
-const SWING_IMAGE = require('./assets/movements/swing-top-anchored-v1.png');
-const GOBLET_SQUAT_IMAGE = require('./assets/movements/goblet-squat-standing-anchored-v1.png');
-const SWING_BOTTOM_IMAGE = require('./assets/movements/swing-bottom-anchored-v1.png');
-const GOBLET_SQUAT_BOTTOM_IMAGE = require('./assets/movements/goblet-squat-bottom-anchored-v1.png');
-const CLEAN_PRESS_LOW_IMAGE = require('./assets/movements/clean-press-low-coherent-anchored-v1.png');
-const CLEAN_PRESS_RACK_IMAGE = require('./assets/movements/clean-press-rack-coherent-anchored-v1.png');
-const CLEAN_PRESS_OVERHEAD_IMAGE = require('./assets/movements/clean-press-overhead-coherent-anchored-v1.png');
-const DEADLIFT_BOTTOM_IMAGE = require('./assets/movements/kettlebell-deadlift-bottom-male-anchored-v2.png');
-const DEADLIFT_STAND_IMAGE = require('./assets/movements/kettlebell-deadlift-stand-male-anchored-v2.png');
-const DEADLIFT_BOTTOM_FEMALE_IMAGE = require('./assets/movements/kettlebell-deadlift-bottom-female-anchored-v2.png');
-const DEADLIFT_STAND_FEMALE_IMAGE = require('./assets/movements/kettlebell-deadlift-stand-female-anchored-v2.png');
 const REST_STANDING_IMAGE = require('./assets/movements/rest-standing-anchored-v1.png');
-const SWING_ZONES_IMAGE = require('./assets/movements/swing-zones-approved-v3.png');
-const GOBLET_SQUAT_ZONES_IMAGE = require('./assets/movements/goblet-squat-zones.png');
-const DEADLIFT_ZONES_IMAGE = require('./assets/movements/kettlebell-deadlift-zones-v1.png');
 const COUNTDOWN_SOUND = require('./assets/sounds/countdown.wav');
 const WORK_START_SOUND = require('./assets/sounds/work-start.wav');
 const REST_START_SOUND = require('./assets/sounds/rest-start.wav');
@@ -58,27 +44,8 @@ const movementFromExercise = (exercise: ExerciseRecord): Movement => ({
 const MOVEMENTS: readonly Movement[] = catalogueExercises.map(movementFromExercise);
 const FigureVariantContext = createContext<FigureVariant>('male');
 
-const movementImage = (movement: Movement, figureVariant: FigureVariant) => movement.id === 'goblet-squat'
-  ? GOBLET_SQUAT_IMAGE
-  : movement.id === 'clean-and-press'
-    ? CLEAN_PRESS_RACK_IMAGE
-    : movement.id === 'kettlebell-deadlift'
-      ? figureVariant === 'female' ? DEADLIFT_STAND_FEMALE_IMAGE : DEADLIFT_STAND_IMAGE
-      : SWING_IMAGE;
-const movementFrames = (movement: Movement, figureVariant: FigureVariant) => movement.id === 'goblet-squat'
-  ? [GOBLET_SQUAT_IMAGE, GOBLET_SQUAT_BOTTOM_IMAGE]
-  : movement.id === 'clean-and-press'
-    ? [CLEAN_PRESS_LOW_IMAGE, CLEAN_PRESS_RACK_IMAGE, CLEAN_PRESS_OVERHEAD_IMAGE]
-    : movement.id === 'kettlebell-deadlift'
-      ? figureVariant === 'female'
-        ? [DEADLIFT_BOTTOM_FEMALE_IMAGE, DEADLIFT_STAND_FEMALE_IMAGE]
-        : [DEADLIFT_BOTTOM_IMAGE, DEADLIFT_STAND_IMAGE]
-      : [SWING_BOTTOM_IMAGE, SWING_IMAGE];
-const zoneMapImage = (exercise: ExerciseRecord) => exercise.id === 'goblet-squat'
-  ? GOBLET_SQUAT_ZONES_IMAGE
-  : exercise.id === 'two-hand-swing'
-    ? SWING_ZONES_IMAGE
-    : exercise.id === 'kettlebell-deadlift' ? DEADLIFT_ZONES_IMAGE : null;
+const movementImage = (movement: Movement, figureVariant: FigureVariant) => exerciseThumbnail(movement.id, figureVariant);
+const movementFrames = (movement: Movement, figureVariant: FigureVariant) => exerciseFrames(movement.id, figureVariant);
 
 const space = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 32, huge: 48 } as const;
 const text = { label: 12, secondary: 14, body: 16, title: 19, screen: 24, timer: 72 } as const;
@@ -415,6 +382,7 @@ function InteractiveIntro({ colors, animationEnabled, onSkip, onCreate }: { colo
 function IntroWorkVisual() {
   const [frame, setFrame] = useState(0);
   const opacity = useRef(new Animated.Value(1)).current;
+  const frames = exerciseFrames('two-hand-swing', 'male');
   useEffect(() => {
     let cancelled = false;
     let hold: ReturnType<typeof setTimeout>;
@@ -428,7 +396,7 @@ function IntroWorkVisual() {
     next();
     return () => { cancelled = true; clearTimeout(hold); opacity.stopAnimation(); };
   }, [opacity]);
-  return <Animated.Image source={frame === 0 ? SWING_BOTTOM_IMAGE : SWING_IMAGE} resizeMode="contain" style={[{ width: '62%', height: '92%' }, { opacity }]} accessibilityLabel="Демонстрация фаз двуручного свинга" />;
+  return <Animated.Image source={frames[frame] ?? frames[0]} resizeMode="contain" style={[{ width: '62%', height: '92%' }, { opacity }]} accessibilityLabel="Демонстрация фаз двуручного свинга" />;
 }
 
 function EntryButton({ title, detail, styles, onPress }: { title: string; detail: string; styles: ReturnType<typeof makeStyles>; onPress: () => void }) {
@@ -513,7 +481,7 @@ function ExerciseDetail({ exercise, colors, styles, onBack, onAdd }: { exercise:
   const detailStyles = useMemo(() => makeExerciseDetailStyles(colors), [colors]);
   const movement = movementFromExercise(exercise);
   const frames = movementFrames(movement, figureVariant);
-  const zonesImage = zoneMapImage(exercise);
+  const zonesImage = exerciseAnatomy(exercise.id);
   return <View style={styles.page}>
     <TopBar title={exercise.name} styles={styles} onBack={onBack} />
     <ScrollView contentContainerStyle={detailStyles.content} showsVerticalScrollIndicator={false}>

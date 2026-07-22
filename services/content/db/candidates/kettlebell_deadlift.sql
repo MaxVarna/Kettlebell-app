@@ -11,11 +11,13 @@ ON CONFLICT (code) DO NOTHING;
 INSERT INTO exercises(
     id,name,movement_kind,laterality,experience,
     style_id,anatomy_style_id,anatomy_asset,anatomy_status,
-    review_technique,review_phases,review_visuals,review_anatomy,review_notes)
+    review_technique,review_phases,review_visuals,review_anatomy,
+    reviewer,reviewed_at,review_notes)
 VALUES (
     'kettlebell-deadlift','Становая тяга с гирей','grind','bilateral','basic',
     'approved-athlete-v1','approved-anatomy-v1','assets/movements/kettlebell-deadlift-zones-v1.png','reviewed',
     'source_checked','reviewed','approved','reviewed',
+    'owner','2026-07-22T00:00:00Z',
     'Мужская пара v2 проверена владельцем в анимации на телефоне; женские визуалы проверены отдельно; анатомическая схема утверждена.'
 );
 

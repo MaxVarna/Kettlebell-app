@@ -38,7 +38,7 @@ def main() -> None:
 
     try:
         support._load(db, 'schema.sql')
-        support._load(db, 'seed_example.sql')
+        support._load(db, 'seed_reference_data.sql')
         support._psql(
             db,
             "\\set ON_ERROR_STOP on\n"
