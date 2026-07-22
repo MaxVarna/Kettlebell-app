@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "referenceFrame": "stand",
+  "status": "reject",
+  "tolerances": {
+    "bone_length": 0.04,
+    "head_width": 0.05,
+    "shoulder_width": 0.05,
+    "torso_width": 0.06,
+    "limb_width": 0.07,
+    "feet_baseline": 0.01
+  },
+  "measurements": {
+    "stand": {
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bones": {
+        "left_upper_arm": 189.6549498431296,
+        "right_upper_arm": 194.74342094150447,
+        "left_forearm": 239.370006475331,
+        "right_forearm": 226.77080940897133,
+        "left_thigh": 142.79005567615695,
+        "right_thigh": 140.356688476182,
+        "left_shin": 250.57733337235433,
+        "right_shin": 247.72969139770066
+      },
+      "limbWidths": {
+        "left_biceps": 110.0,
+        "right_biceps": 96.0,
+        "left_forearm": 143.0,
+        "right_forearm": 112.0,
+        "left_thigh": 77.0,
+        "right_thigh": 73.0,
+        "left_calf": 79.0,
+        "right_calf": 72.0
+      },
+      "headWidth": 131.0,
+      "shoulderWidth": 230.0,
+      "torsoWidth": 222.0,
+      "feetBaseline": 0.9485677083333334
+    },
+    "bottom": {
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bones": {
+        "left_upper_arm": 216.27991122617004,
+        "right_upper_arm": 210.4661492972207,
+        "left_forearm": 281.04981764804614,
+        "right_forearm": 271.189970316013,
+        "left_thigh": 169.09760495051373,
+        "right_thigh": 161.01242188104618,
+        "left_shin": 219.25783908448975,
+        "right_shin": 201.3181561608391
+      },
+      "limbWidths": {
+        "left_biceps": 148.0,
+        "right_biceps": 102.0,
+        "left_forearm": 181.0,
+        "right_forearm": 181.0,
+        "left_thigh": 111.0,
+        "right_thigh": 67.0,
+        "left_calf": 67.0,
+        "right_calf": 64.0
+      },
+      "headWidth": 134.0,
+      "shoulderWidth": 230.5558500667463,
+      "torsoWidth": 241.82845159327303,
+      "feetBaseline": 0.9485677083333334
+    }
+  },
+  "comparisons": {
+    "bottom": {
+      "status": "reject",
+      "scale": 0.874305,
+      "metrics": {
+        "bone_left_upper_arm": {
+          "reference": 189.655,
+          "candidate": 189.095,
+          "deviation": 0.003,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_right_upper_arm": {
+          "reference": 194.743,
+          "candidate": 184.012,
+          "deviation": 0.0551,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_left_forearm": {
+          "reference": 239.37,
+          "candidate": 245.723,
+          "deviation": 0.0265,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_right_forearm": {
+          "reference": 226.771,
+          "candidate": 237.103,
+          "deviation": 0.0456,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_left_thigh": {
+          "reference": 142.79,
+          "candidate": 147.843,
+          "deviation": 0.0354,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_right_thigh": {
+          "reference": 140.357,
+          "candidate": 140.774,
+          "deviation": 0.003,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_left_shin": {
+          "reference": 250.577,
+          "candidate": 191.698,
+          "deviation": 0.235,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_right_shin": {
+          "reference": 247.73,
+          "candidate": 176.013,
+          "deviation": 0.2895,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "left_biceps": {
+          "reference": 110.0,
+          "candidate": 129.397,
+          "deviation": 0.1763,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "right_biceps": {
+          "reference": 96.0,
+          "candidate": 89.179,
+          "deviation": 0.0711,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "left_forearm": {
+          "reference": 143.0,
+          "candidate": 158.249,
+          "deviation": 0.1066,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "right_forearm": {
+          "reference": 112.0,
+          "candidate": 158.249,
+          "deviation": 0.4129,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "left_thigh": {
+          "reference": 77.0,
+          "candidate": 97.048,
+          "deviation": 0.2604,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "right_thigh": {
+          "reference": 73.0,
+          "candidate": 58.578,
+          "deviation": 0.1976,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "left_calf": {
+          "reference": 79.0,
+          "candidate": 58.578,
+          "deviation": 0.2585,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "right_calf": {
+          "reference": 72.0,
+          "candidate": 55.955,
+          "deviation": 0.2228,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "head_width": {
+          "reference": 131.0,
+          "candidate": 117.157,
+          "deviation": 0.1057,
+          "tolerance": 0.05,
+          "group": "head_width"
+        },
+        "shoulder_width": {
+          "reference": 230.0,
+          "candidate": 201.576,
+          "deviation": 0.1236,
+          "tolerance": 0.05,
+          "group": "shoulder_width"
+        },
+        "torso_width": {
+          "reference": 222.0,
+          "candidate": 211.432,
+          "deviation": 0.0476,
+          "tolerance": 0.06,
+          "group": "torso_width"
+        },
+        "feet_baseline": {
+          "reference": 0.949,
+          "candidate": 0.949,
+          "deviation": 0.0,
+          "tolerance": 0.01,
+          "group": "feet_baseline"
+        }
+      }
+    }
+  }
+}

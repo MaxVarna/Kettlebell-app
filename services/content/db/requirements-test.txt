@@ -1,0 +1,10 @@
+# Зависимости теста слоя БД каталога упражнений (services/content/db/test_export.py)
+# Поднимает встроенный PostgreSQL, прогоняет schema.sql + seed и проверяет экспорт.
+#
+# Установка — в виртуальном окружении (см. README.md), НЕ через --break-system-packages:
+#   python -m venv .venv
+#   .venv\Scripts\activate            (Windows)
+#   pip install -r requirements-test.txt
+#
+# Колёса доступны под Windows (win_amd64), macOS и Linux для Python 3.9–3.12.
+pgserver==0.1.4

@@ -64,7 +64,7 @@ const nextPhase = (scheme: RunnerScheme, state: RunnerState): Omit<RunnerState, 
 
   return {
     ...state,
-    phase: 'preparation',
+    phase: scheme.preparationOnlyAtStart === false ? 'preparation' : 'work',
     cycleIndex: state.cycleIndex + 1,
     movementIndex: 0,
   };

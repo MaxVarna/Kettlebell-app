@@ -11,6 +11,7 @@ const scheme: RunnerScheme = {
   ],
   rhythm: { preparationSec: 2, workSec: 3, restSec: 4 },
   cycleCount: 2,
+  preparationOnlyAtStart: true,
 };
 
 test('starts at preparation and counts from a deadline', () => {
@@ -41,19 +42,33 @@ test('keeps the saved order and one shared rhythm through every cycle', () => {
   const nextCycle = reconcile(scheme, secondMovement, 16_500);
   assert.deepEqual(
     { phase: nextCycle.phase, movement: nextCycle.movementIndex, cycle: nextCycle.cycleIndex },
-    { phase: 'preparation', movement: 0, cycle: 1 },
+    { phase: 'work', movement: 0, cycle: 1 },
   );
 
-  assert.equal(reconcile(scheme, nextCycle, 32_000).phase, 'completed');
+  assert.equal(reconcile(scheme, nextCycle, 30_000).phase, 'completed');
 });
 
-test('uses preparation once per cycle, not before every movement', () => {
+test('uses preparation only once at the start when enabled', () => {
   const firstRest = reconcile(scheme, start(scheme, 0), 5_000);
   assert.equal(firstRest.phase, 'rest');
   const secondMovement = reconcile(scheme, firstRest, 9_000);
   assert.deepEqual(
     { phase: secondMovement.phase, movement: secondMovement.movementIndex, cycle: secondMovement.cycleIndex },
     { phase: 'work', movement: 1, cycle: 0 },
+  );
+  const nextCycle = reconcile(scheme, secondMovement, 16_000);
+  assert.deepEqual(
+    { phase: nextCycle.phase, movement: nextCycle.movementIndex, cycle: nextCycle.cycleIndex },
+    { phase: 'work', movement: 0, cycle: 1 },
+  );
+});
+
+test('can repeat preparation at the start of every cycle', () => {
+  const repeatedPreparation = { ...scheme, preparationOnlyAtStart: false };
+  const nextCycle = reconcile(repeatedPreparation, start(repeatedPreparation, 0), 16_000);
+  assert.deepEqual(
+    { phase: nextCycle.phase, movement: nextCycle.movementIndex, cycle: nextCycle.cycleIndex },
+    { phase: 'preparation', movement: 0, cycle: 1 },
   );
 });
 

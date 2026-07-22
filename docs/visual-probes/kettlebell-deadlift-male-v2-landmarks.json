@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "referenceFrame": "stand",
+  "frames": [
+    {
+      "id": "stand",
+      "image": "../../apps/mobile/assets/movements/kettlebell-deadlift-stand-male-anchored-v2.png",
+      "landmarks": {
+        "crown": [474, 174],
+        "chin": [483, 357],
+        "left_shoulder": [358, 414],
+        "right_shoulder": [588, 414],
+        "left_elbow": [383, 602],
+        "right_elbow": [626, 605],
+        "left_wrist": [470, 825],
+        "right_wrist": [571, 825],
+        "left_hip": [384, 968],
+        "right_hip": [606, 968],
+        "left_knee": [369, 1110],
+        "right_knee": [596, 1108],
+        "left_ankle": [352, 1360],
+        "right_ankle": [615, 1355],
+        "left_foot": [352, 1457],
+        "right_foot": [615, 1457]
+      }
+    },
+    {
+      "id": "bottom",
+      "image": "../../apps/mobile/assets/movements/kettlebell-deadlift-bottom-male-anchored-v2.png",
+      "landmarks": {
+        "crown": [535, 493],
+        "chin": [553, 667],
+        "left_shoulder": [420, 704],
+        "right_shoulder": [650, 720],
+        "left_elbow": [431, 920],
+        "right_elbow": [636, 930],
+        "left_wrist": [489, 1195],
+        "right_wrist": [566, 1192],
+        "left_hip": [366, 1010],
+        "right_hip": [607, 1030],
+        "left_knee": [329, 1175],
+        "right_knee": [702, 1160],
+        "left_ankle": [286, 1390],
+        "right_ankle": [679, 1360],
+        "left_foot": [286, 1457],
+        "right_foot": [679, 1457]
+      }
+    }
+  ]
+}

@@ -81,6 +81,30 @@ export const exerciseEditorialQueue: readonly ExerciseRecord[] = [
       motionReady: true,
     },
   },
+  {
+    id: 'kettlebell-deadlift',
+    name: 'Становая тяга с гирей',
+    movementKind: 'grind',
+    keyPose: 'Гиря между стопами; спина нейтральна, движение начинается от таза.',
+    cueDrafts: [
+      'Отведи таз назад и держи спину нейтральной.',
+      'Встань, одновременно разгибая колени и таз.',
+      'В верхней точке стой прямо — не отклоняйся назад.',
+    ],
+    zoneMap: ['ягодицы', 'задняя поверхность бедра', 'квадрицепсы', 'разгибатели позвоночника'],
+    sourceUrls: [
+      'https://dxpprod.nsca.com/contentassets/b70b70c5cb96417bbc58d5b6756a689e/ptq-8.3.1-resistance-training-progressions-for-the-older-adult-deadlifts.pdf',
+      'https://barbend.com/kettlebell-deadlift/',
+      'https://doi.org/10.1371/journal.pone.0229507',
+    ],
+    review: { status: 'approved', reviewedAt: '2026-07-22T00:00:00Z', reviewer: 'owner' },
+    assets: {
+      thumbnail: 'assets/movements/kettlebell-deadlift-stand-male-anchored-v2.png',
+      runnerStatic: 'assets/movements/kettlebell-deadlift-stand-male-anchored-v2.png',
+      zoneMap: 'assets/movements/kettlebell-deadlift-zones-v1.png',
+      motionReady: true,
+    },
+  },
 ];
 
 export const catalogueExercises = exerciseEditorialQueue.filter(

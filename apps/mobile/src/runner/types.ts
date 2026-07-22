@@ -17,6 +17,7 @@ export type RunnerScheme = {
   movements: readonly Movement[];
   rhythm: IntervalRhythm;
   cycleCount: number;
+  preparationOnlyAtStart?: boolean;
 };
 
 export type RunnerState = {

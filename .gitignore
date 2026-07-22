@@ -12,3 +12,9 @@ audit/tools/
 
 # Intermediate image-generation assets are reproducible and not shipped.
 apps/mobile/assets/movements/*-chroma.png
+apps/mobile/assets/movements/kettlebell-deadlift-*-anchored-v1.png
+apps/mobile/assets/movements/kettlebell-deadlift-*-v2-alpha.png
+
+# Local Python bytecode from content-pipeline checks.
+__pycache__/
+*.py[cod]
