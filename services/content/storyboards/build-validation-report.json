@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "manifestCount": 10,
+  "exerciseCount": 5,
+  "assetCount": 24,
+  "assets": [
+    {
+      "exerciseId": "bottom-up-press",
+      "figureVariant": "female",
+      "phaseId": "bottom-up-rack",
+      "path": "apps/mobile/assets/movements/bottom-up-press-rack-female-generated-v1.png",
+      "sha256": "a48168e84b792efe193a23f294dec1450c9db70ca95ec481cdc4b8f3d9d7821a",
+      "alphaBBox": [
+        297,
+        334,
+        728,
+        1461
+      ],
+      "baselineDeltaPx": 3
+    },
+    {
+      "exerciseId": "bottom-up-press",
+      "figureVariant": "female",
+      "phaseId": "bottom-up-lockout",
+      "path": "apps/mobile/assets/movements/bottom-up-press-lockout-female-generated-v1.png",
+      "sha256": "66b72e84e133d6ba617b7267545405aee005c14b6064b8db70455cce026632e5",
+      "alphaBBox": [
+        296,
+        24,
+        728,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "bottom-up-press",
+      "figureVariant": "male",
+      "phaseId": "bottom-up-rack",
+      "path": "apps/mobile/assets/movements/bottom-up-press-rack-male-generated-v1.png",
+      "sha256": "7b450f2ae3cb41272fcd080ec696fec1c5e78cc43a7ca86b342faf1b5b4e618d",
+      "alphaBBox": [
+        298,
+        336,
+        726,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "bottom-up-press",
+      "figureVariant": "male",
+      "phaseId": "bottom-up-lockout",
+      "path": "apps/mobile/assets/movements/bottom-up-press-lockout-male-generated-v1.png",
+      "sha256": "29d6eb5c9d2b417880157ec6f53553a03515573bb61c9b64d2292f858078898b",
+      "alphaBBox": [
+        298,
+        47,
+        726,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "kettlebell-figure-eight",
+      "figureVariant": "female",
+      "phaseId": "figure-eight-left",
+      "path": "apps/mobile/assets/movements/figure-eight-left-female-generated-v1.png",
+      "sha256": "aa9518c8397c86dfe31cde37780550db68d3d1c5a6eb968b10172ece46261dd0",
+      "alphaBBox": [
+        198,
+        169,
+        826,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "kettlebell-figure-eight",
+      "figureVariant": "female",
+      "phaseId": "figure-eight-pass",
+      "path": "apps/mobile/assets/movements/figure-eight-pass-female-generated-v1.png",
+      "sha256": "e063e136d69d59752c0f4b611419d84cc9e1c13bef1f6edb9d68f105cfe4201b",
+      "alphaBBox": [
+        198,
+        169,
+        826,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "kettlebell-figure-eight",
+      "figureVariant": "female",
+      "phaseId": "figure-eight-right",
+      "path": "apps/mobile/assets/movements/figure-eight-right-female-generated-v1.png",
+      "sha256": "a47a5571f029e3bc65888051fa929c78b8d2d390155c73a77a127038a018403c",
+      "alphaBBox": [
+        192,
+        169,
+        832,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "kettlebell-figure-eight",
+      "figureVariant": "male",
+      "phaseId": "figure-eight-left",
+      "path": "apps/mobile/assets/movements/figure-eight-left-male-generated-v1.png",
+      "sha256": "717a10f9467783ad25c9406687813de6d6ee5e88e487d91ffaee9e31579ad0c2",
+      "alphaBBox": [
+        64,
+        168,
+        960,
+        1463
+      ],
+      "baselineDeltaPx": 5
+    },
+    {
+      "exerciseId": "kettlebell-figure-eight",
+      "figureVariant": "male",
+      "phaseId": "figure-eight-pass",
+      "path": "apps/mobile/assets/movements/figure-eight-pass-male-generated-v1.png",
+      "sha256": "b4e0b005f611af2f52037bba1198cf39a458e65f29eefba78b308bc00e9b085e",
+      "alphaBBox": [
+        65,
+        168,
+        960,
+        1463
+      ],
+      "baselineDeltaPx": 5
+    },
+    {
+      "exerciseId": "kettlebell-figure-eight",
+      "figureVariant": "male",
+      "phaseId": "figure-eight-right",
+      "path": "apps/mobile/assets/movements/figure-eight-right-male-generated-v1.png",
+      "sha256": "382f6d17dd54572bd549d1ee461c1ecd20e45887c68b635cbfa82ea5bf034403",
+      "alphaBBox": [
+        63,
+        168,
+        961,
+        1463
+      ],
+      "baselineDeltaPx": 5
+    },
+    {
+      "exerciseId": "front-rack-squat",
+      "figureVariant": "female",
+      "phaseId": "front-squat-stand",
+      "path": "apps/mobile/assets/movements/front-squat-stand-female-generated-v1.png",
+      "sha256": "29de8f24669e015b9feaa0bf88e453a525e5837e4d6bb8c21a30f5614ec7e470",
+      "alphaBBox": [
+        286,
+        169,
+        739,
+        1461
+      ],
+      "baselineDeltaPx": 3
+    },
+    {
+      "exerciseId": "front-rack-squat",
+      "figureVariant": "female",
+      "phaseId": "front-squat-bottom",
+      "path": "apps/mobile/assets/movements/front-squat-bottom-female-generated-v1.png",
+      "sha256": "7d668710a6c65de2ac2ba74f49e3788e3c828c09ec7de4c7f21d8efbc99928c2",
+      "alphaBBox": [
+        223,
+        617,
+        802,
+        1461
+      ],
+      "baselineDeltaPx": 3
+    },
+    {
+      "exerciseId": "front-rack-squat",
+      "figureVariant": "male",
+      "phaseId": "front-squat-stand",
+      "path": "apps/mobile/assets/movements/front-squat-stand-male-generated-v1.png",
+      "sha256": "074a88e36d457ed5d1327edc035e4c5b30f6ec816432467dd2d328c2cb0ba5b7",
+      "alphaBBox": [
+        280,
+        170,
+        744,
+        1460
+      ],
+      "baselineDeltaPx": 2
+    },
+    {
+      "exerciseId": "front-rack-squat",
+      "figureVariant": "male",
+      "phaseId": "front-squat-bottom",
+      "path": "apps/mobile/assets/movements/front-squat-bottom-male-generated-v1.png",
+      "sha256": "84c39d8a198249f44844eed828f82c5e56fbc358721334675f58a075336acf5b",
+      "alphaBBox": [
+        219,
+        545,
+        806,
+        1460
+      ],
+      "baselineDeltaPx": 2
+    },
+    {
+      "exerciseId": "kettlebell-halo",
+      "figureVariant": "female",
+      "phaseId": "halo-front",
+      "path": "apps/mobile/assets/movements/halo-front-female-generated-v1.png",
+      "sha256": "7523fbf4600462f3caca3a3c810139159307c3065f0328a8fa3ccd77f4f08a35",
+      "alphaBBox": [
+        296,
+        171,
+        728,
+        1459
+      ],
+      "baselineDeltaPx": 1
+    },
+    {
+      "exerciseId": "kettlebell-halo",
+      "figureVariant": "female",
+      "phaseId": "halo-right",
+      "path": "apps/mobile/assets/movements/halo-right-female-generated-v1.png",
+      "sha256": "60ebf463d952c504c6ada4995a04792dd1cf3ac8cb064b0bc3a60c4316c9b81a",
+      "alphaBBox": [
+        270,
+        172,
+        755,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "kettlebell-halo",
+      "figureVariant": "female",
+      "phaseId": "halo-left",
+      "path": "apps/mobile/assets/movements/halo-left-female-generated-v1.png",
+      "sha256": "680eeb716de26455e7a26415c4d5ab33e0c9e3f06f07793e2b34c28511a6b42d",
+      "alphaBBox": [
+        278,
+        172,
+        747,
+        1460
+      ],
+      "baselineDeltaPx": 2
+    },
+    {
+      "exerciseId": "kettlebell-halo",
+      "figureVariant": "male",
+      "phaseId": "halo-front",
+      "path": "apps/mobile/assets/movements/halo-front-male-generated-v1.png",
+      "sha256": "ba1d0ffd0589e38fd831ec1c8bfb33a1118e1a46d6e15f3e4ff0dbd525492b55",
+      "alphaBBox": [
+        309,
+        169,
+        716,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "kettlebell-halo",
+      "figureVariant": "male",
+      "phaseId": "halo-right",
+      "path": "apps/mobile/assets/movements/halo-right-male-generated-v1.png",
+      "sha256": "e2e3f4c21b3c18c7a4dc1e1e51df12a6adedee320e984460832c9a9cbd07e89c",
+      "alphaBBox": [
+        298,
+        169,
+        727,
+        1461
+      ],
+      "baselineDeltaPx": 3
+    },
+    {
+      "exerciseId": "kettlebell-halo",
+      "figureVariant": "male",
+      "phaseId": "halo-left",
+      "path": "apps/mobile/assets/movements/halo-left-male-generated-v1.png",
+      "sha256": "0c02a527f94733ddaa5db8904fba79e5d41c1bab033b4d65aaa77cb30061cdb0",
+      "alphaBBox": [
+        299,
+        171,
+        725,
+        1461
+      ],
+      "baselineDeltaPx": 3
+    },
+    {
+      "exerciseId": "high-windmill",
+      "figureVariant": "female",
+      "phaseId": "windmill-stand",
+      "path": "apps/mobile/assets/movements/high-windmill-stand-female-generated-v1.png",
+      "sha256": "5d23a9a032efc21087b7e0e300bc98692056208350a420edcde1196ee885d561",
+      "alphaBBox": [
+        250,
+        170,
+        775,
+        1462
+      ],
+      "baselineDeltaPx": 4
+    },
+    {
+      "exerciseId": "high-windmill",
+      "figureVariant": "female",
+      "phaseId": "windmill-hinge",
+      "path": "apps/mobile/assets/movements/high-windmill-hinge-female-generated-v1.png",
+      "sha256": "a5b10c737616a6445dbafb50bb74f77f17ddd2001b63c35d000e5a4be6906777",
+      "alphaBBox": [
+        210,
+        249,
+        815,
+        1461
+      ],
+      "baselineDeltaPx": 3
+    },
+    {
+      "exerciseId": "high-windmill",
+      "figureVariant": "male",
+      "phaseId": "windmill-stand",
+      "path": "apps/mobile/assets/movements/high-windmill-stand-male-generated-v1.png",
+      "sha256": "9222168ef2ccc9ecb0694bb178be2b1a0dff94343ebfef7fc3b94a18ce015d5c",
+      "alphaBBox": [
+        244,
+        169,
+        781,
+        1459
+      ],
+      "baselineDeltaPx": 1
+    },
+    {
+      "exerciseId": "high-windmill",
+      "figureVariant": "male",
+      "phaseId": "windmill-hinge",
+      "path": "apps/mobile/assets/movements/high-windmill-hinge-male-generated-v1.png",
+      "sha256": "a1b1b2970290b2a38a4e43249cc0d860a90c75deddd3cec4fdccef0d008b7eeb",
+      "alphaBBox": [
+        203,
+        327,
+        822,
+        1461
+      ],
+      "baselineDeltaPx": 3
+    }
+  ],
+  "errors": []
+}

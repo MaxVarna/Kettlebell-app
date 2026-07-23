@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\high-windmill\\high-windmill-male-storyboard-v1.png",
+  "scale": 1.3554852320675106,
+  "sourceFeetBaseline": 972,
+  "phaseSourceFeetBaselines": [
+    972,
+    970
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 0,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\high-windmill-stand-male-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\high-windmill-hinge-male-generated-v1.png"
+  ]
+}

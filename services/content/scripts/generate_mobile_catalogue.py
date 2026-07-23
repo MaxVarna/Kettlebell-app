@@ -32,13 +32,15 @@ def _copy_scalar(db, expression: str) -> str:
     return [line.strip() for line in output.splitlines() if line.strip()][-1]
 
 
-def _candidate_index() -> list[dict[str, str]]:
+def _candidate_index() -> list[dict]:
     entries = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
     if not isinstance(entries, list) or not entries:
         raise ValueError("candidates/index.json должен содержать непустой массив")
     for entry in entries:
-        if set(entry) != {"id", "sql"}:
-            raise ValueError("Каждый кандидат должен содержать только id и sql")
+        if set(entry) not in ({"id", "sql"}, {"id", "sql", "publish"}):
+            raise ValueError("Каждый кандидат должен содержать id, sql и необязательный publish")
+        if "publish" in entry and not isinstance(entry["publish"], bool):
+            raise ValueError("Поле publish должно быть boolean")
     return entries
 
 
@@ -65,6 +67,8 @@ def _export_records() -> list[dict]:
 
         records: list[dict] = []
         for entry in entries:
+            if not entry.get("publish", True):
+                continue
             exercise_id = entry["id"].replace("'", "''")
             can_publish = _copy_scalar(db, f"fn_can_publish('{exercise_id}')")
             if can_publish != "true":

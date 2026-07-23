@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\halo\\halo-female-storyboard-v1.png",
+  "scale": 1.6286438529784537,
+  "sourceFeetBaseline": 843,
+  "phaseSourceFeetBaselines": [
+    843,
+    843,
+    843
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 1,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\halo-front-female-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\halo-right-female-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\halo-left-female-generated-v1.png"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\high-windmill\\high-windmill-female-storyboard-v1.png",
+  "scale": 1.3413361169102296,
+  "sourceFeetBaseline": 979,
+  "phaseSourceFeetBaselines": [
+    979,
+    978
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 0,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\high-windmill-stand-female-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\high-windmill-hinge-female-generated-v1.png"
+  ]
+}

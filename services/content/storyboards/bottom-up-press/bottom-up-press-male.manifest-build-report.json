@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\bottom-up-press\\bottom-up-press-male-storyboard-v1.png",
+  "scale": 1.5074024226110363,
+  "sourceFeetBaseline": 959,
+  "phaseSourceFeetBaselines": [
+    959,
+    960
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 0,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\bottom-up-press-rack-male-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\bottom-up-press-lockout-male-generated-v1.png"
+  ]
+}

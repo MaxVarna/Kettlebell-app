@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\halo\\halo-male-storyboard-v1.png",
+  "scale": 1.5370813397129186,
+  "sourceFeetBaseline": 888,
+  "phaseSourceFeetBaselines": [
+    888,
+    888,
+    888
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 2,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\halo-front-male-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\halo-right-male-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\halo-left-male-generated-v1.png"
+  ]
+}

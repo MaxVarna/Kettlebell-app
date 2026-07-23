@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\front-squat\\front-squat-female-storyboard-v1.png",
+  "scale": 1.3526315789473684,
+  "sourceFeetBaseline": 1011,
+  "phaseSourceFeetBaselines": [
+    1011,
+    978
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 0,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\front-squat-stand-female-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\front-squat-bottom-female-generated-v1.png"
+  ]
+}

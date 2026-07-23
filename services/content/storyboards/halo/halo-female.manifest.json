@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "exerciseId": "kettlebell-halo",
+  "figureVariant": "female",
+  "source": "halo-female-storyboard-v1.png",
+  "sourceFeetBaseline": 843,
+  "targetFeetBaseline": 1458,
+  "targetAthleteHeight": 1285,
+  "canvas": [1024, 1536],
+  "referenceIndex": 0,
+  "phases": [
+    {"id": "halo-front", "output": "../../../../apps/mobile/assets/movements/halo-front-female-generated-v1.png"},
+    {"id": "halo-right", "output": "../../../../apps/mobile/assets/movements/halo-right-female-generated-v1.png"},
+    {"id": "halo-left", "output": "../../../../apps/mobile/assets/movements/halo-left-female-generated-v1.png"}
+  ]
+}

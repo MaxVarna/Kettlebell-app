@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\bottom-up-press\\bottom-up-press-female-storyboard-v1.png",
+  "scale": 1.5279672578444747,
+  "sourceFeetBaseline": 954,
+  "phaseSourceFeetBaselines": [
+    954,
+    954
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 0,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\bottom-up-press-rack-female-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\bottom-up-press-lockout-female-generated-v1.png"
+  ]
+}

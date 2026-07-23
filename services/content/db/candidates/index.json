@@ -1,42 +1,17 @@
 [
-  {
-    "id": "kettlebell-deadlift",
-    "sql": "kettlebell_deadlift.sql"
-  },
-  {
-    "id": "two-hand-swing",
-    "sql": "two_hand_swing.sql"
-  },
-  {
-    "id": "goblet-squat",
-    "sql": "goblet_squat.sql"
-  },
-  {
-    "id": "clean-and-press",
-    "sql": "clean_and_press.sql"
-  },
-  {
-    "id": "one-arm-press",
-    "sql": "one_arm_press.sql"
-  },
-  {
-    "id": "one-arm-clean",
-    "sql": "one_arm_clean.sql"
-  },
-  {
-    "id": "one-arm-row",
-    "sql": "one_arm_row.sql"
-  },
-  {
-    "id": "goblet-reverse-lunge",
-    "sql": "goblet_reverse_lunge.sql"
-  },
-  {
-    "id": "one-arm-swing",
-    "sql": "one_arm_swing.sql"
-  },
-  {
-    "id": "one-arm-snatch",
-    "sql": "one_arm_snatch.sql"
-  }
+  {"id":"kettlebell-deadlift","sql":"kettlebell_deadlift.sql","publish":true},
+  {"id":"two-hand-swing","sql":"two_hand_swing.sql","publish":true},
+  {"id":"goblet-squat","sql":"goblet_squat.sql","publish":true},
+  {"id":"clean-and-press","sql":"clean_and_press.sql","publish":true},
+  {"id":"one-arm-press","sql":"one_arm_press.sql","publish":true},
+  {"id":"one-arm-clean","sql":"one_arm_clean.sql","publish":true},
+  {"id":"one-arm-row","sql":"one_arm_row.sql","publish":true},
+  {"id":"goblet-reverse-lunge","sql":"goblet_reverse_lunge.sql","publish":true},
+  {"id":"one-arm-swing","sql":"one_arm_swing.sql","publish":true},
+  {"id":"one-arm-snatch","sql":"one_arm_snatch.sql","publish":true},
+  {"id":"kettlebell-halo","sql":"kettlebell_halo.sql","publish":false},
+  {"id":"front-rack-squat","sql":"front_rack_squat.sql","publish":false},
+  {"id":"high-windmill","sql":"high_windmill.sql","publish":false},
+  {"id":"kettlebell-figure-eight","sql":"kettlebell_figure_eight.sql","publish":false},
+  {"id":"bottom-up-press","sql":"bottom_up_press.sql","publish":false}
 ]

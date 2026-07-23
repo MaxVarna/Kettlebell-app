@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\figure-eight\\figure-eight-male-storyboard-v1.png",
+  "scale": 2.026813880126183,
+  "sourceFeetBaseline": 748,
+  "phaseSourceFeetBaselines": [
+    748,
+    748,
+    748
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 1,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\figure-eight-left-male-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\figure-eight-pass-male-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\figure-eight-right-male-generated-v1.png"
+  ]
+}

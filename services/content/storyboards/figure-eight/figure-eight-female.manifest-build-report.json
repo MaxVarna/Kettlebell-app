@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\figure-eight\\figure-eight-female-storyboard-v1.png",
+  "scale": 1.7602739726027397,
+  "sourceFeetBaseline": 868,
+  "phaseSourceFeetBaselines": [
+    868,
+    868,
+    868
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 0,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\figure-eight-left-female-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\figure-eight-pass-female-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\figure-eight-right-female-generated-v1.png"
+  ]
+}

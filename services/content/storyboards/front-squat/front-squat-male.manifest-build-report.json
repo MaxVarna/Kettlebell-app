@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "source": "D:\\Kettlebell app\\services\\content\\storyboards\\front-squat\\front-squat-male-storyboard-v1.png",
+  "scale": 1.3139059304703475,
+  "sourceFeetBaseline": 1009,
+  "phaseSourceFeetBaselines": [
+    1009,
+    990
+  ],
+  "targetFeetBaseline": 1458,
+  "discardedRightPixels": 0,
+  "outputs": [
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\front-squat-stand-male-generated-v1.png",
+    "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\front-squat-bottom-male-generated-v1.png"
+  ]
+}
