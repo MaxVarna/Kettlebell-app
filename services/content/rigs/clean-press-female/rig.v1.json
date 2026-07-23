@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "clean-press-female",
+  "status": "draft",
+  "styleReview": "pending_owner_review",
+  "source": "master-source-v1.png",
+  "canvas": [1024, 1536],
+  "feetBaseline": 1368,
+  "workingSide": "right",
+  "lockedLayers": ["head", "torso", "left_arm", "pelvis", "left_leg", "right_leg"],
+  "joints": {
+    "right_shoulder": [454, 350],
+    "right_elbow": [286, 360],
+    "right_wrist": [116, 357],
+    "kettlebell_handle": [116, 382]
+  },
+  "segments": {
+    "right_upper_arm": {"from": "right_shoulder", "to": "right_elbow", "length": 168.30},
+    "right_forearm": {"from": "right_elbow", "to": "right_wrist", "length": 170.03}
+  },
+  "poses": [
+    {
+      "id": "rack",
+      "upperArmAngleDegrees": 98,
+      "forearmAngleDegrees": -82,
+      "kettlebellAngleDegrees": 0
+    },
+    {
+      "id": "lockout",
+      "upperArmAngleDegrees": -90,
+      "forearmAngleDegrees": -90,
+      "kettlebellAngleDegrees": 0
+    }
+  ],
+  "layerMasks": {
+    "base": null,
+    "right_upper_arm": null,
+    "right_forearm_hand": null,
+    "kettlebell": null
+  }
+}
