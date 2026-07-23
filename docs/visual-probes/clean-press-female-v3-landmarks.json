@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "referenceFrame": "rack",
+  "frames": [
+    {
+      "id": "rack",
+      "image": "../../apps/mobile/assets/movements/clean-press-rack-female-anchored-v2.png",
+      "landmarks": {
+        "crown": [468, 174],
+        "chin": [515, 347],
+        "left_shoulder": [584, 414],
+        "right_shoulder": [414, 401],
+        "left_elbow": [637, 630],
+        "right_elbow": [397, 579],
+        "left_wrist": [650, 817],
+        "right_wrist": [447, 391],
+        "left_hip": [570, 735],
+        "right_hip": [431, 731],
+        "left_knee": [579, 1075],
+        "right_knee": [385, 1074],
+        "left_ankle": [611, 1329],
+        "right_ankle": [350, 1338],
+        "left_foot": [616, 1450],
+        "right_foot": [356, 1458]
+      }
+    },
+    {
+      "id": "lockout",
+      "image": "../../apps/mobile/assets/movements/clean-press-overhead-female-anchored-v3.png",
+      "landmarks": {
+        "crown": [489, 332],
+        "chin": [541, 499],
+        "left_shoulder": [582, 535],
+        "right_shoulder": [414, 509],
+        "left_elbow": [634, 714],
+        "right_elbow": [394, 366],
+        "left_wrist": [647, 894],
+        "right_wrist": [411, 177],
+        "left_hip": [576, 810],
+        "right_hip": [426, 805],
+        "left_knee": [580, 1097],
+        "right_knee": [382, 1096],
+        "left_ankle": [611, 1338],
+        "right_ankle": [365, 1348],
+        "left_foot": [615, 1450],
+        "right_foot": [370, 1458]
+      }
+    }
+  ]
+}

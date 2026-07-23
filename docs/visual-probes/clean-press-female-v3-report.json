@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "referenceFrame": "rack",
+  "status": "reject",
+  "tolerances": {
+    "bone_length": 0.04,
+    "head_width": 0.05,
+    "shoulder_width": 0.05,
+    "torso_width": 0.06,
+    "limb_width": 0.07,
+    "feet_baseline": 0.01
+  },
+  "measurements": {
+    "rack": {
+      "image": "../../apps/mobile/assets/movements/clean-press-rack-female-anchored-v2.png",
+      "imageSha256": "02ac21e2d1d6eeebd13227fd753f6c6da2189ac3a964101ba95d07b259811358",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bones": {
+        "left_upper_arm": 222.40728405337808,
+        "right_upper_arm": 178.80995498014084,
+        "left_forearm": 187.45132701584163,
+        "right_forearm": 194.53534383242547,
+        "left_thigh": 340.1190967881692,
+        "right_thigh": 346.07080200444534,
+        "left_shin": 256.00781238079435,
+        "right_shin": 266.3099697720684
+      },
+      "limbWidths": {
+        "left_biceps": 111.0,
+        "right_biceps": 129.0,
+        "left_forearm": 41.0,
+        "right_forearm": 141.0,
+        "left_thigh": 134.0,
+        "right_thigh": 128.0,
+        "left_calf": 84.0,
+        "right_calf": 88.0
+      },
+      "headWidth": 171.0,
+      "shoulderWidth": 170.49633427144408,
+      "torsoWidth": 139.05754204644924,
+      "feetBaseline": 0.94921875
+    },
+    "lockout": {
+      "image": "../../apps/mobile/assets/movements/clean-press-overhead-female-anchored-v3.png",
+      "imageSha256": "905e11fa811baa8ea900220f46046a38c6704134146d3c06ce6bfb090805403e",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bones": {
+        "left_upper_arm": 186.40010729610646,
+        "right_upper_arm": 144.3918280236108,
+        "left_forearm": 180.46883387443938,
+        "right_forearm": 189.76301009416983,
+        "left_thigh": 287.0278732109479,
+        "right_thigh": 294.3076621496627,
+        "left_shin": 242.98559628093184,
+        "right_shin": 252.57276179350774
+      },
+      "limbWidths": {
+        "left_biceps": 95.0,
+        "right_biceps": 84.0,
+        "left_forearm": 41.0,
+        "right_forearm": 89.0,
+        "left_thigh": 121.0,
+        "right_thigh": 117.0,
+        "left_calf": 76.0,
+        "right_calf": 77.0
+      },
+      "headWidth": 191.0,
+      "shoulderWidth": 170.0,
+      "torsoWidth": 150.08331019803634,
+      "feetBaseline": 0.94921875
+    }
+  },
+  "comparisons": {
+    "lockout": {
+      "status": "reject",
+      "scale": 1.115135,
+      "metrics": {
+        "bone_left_upper_arm": {
+          "reference": 222.407,
+          "candidate": 207.861,
+          "deviation": 0.0654,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_right_upper_arm": {
+          "reference": 178.81,
+          "candidate": 161.016,
+          "deviation": 0.0995,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_left_forearm": {
+          "reference": 187.451,
+          "candidate": 201.247,
+          "deviation": 0.0736,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_right_forearm": {
+          "reference": 194.535,
+          "candidate": 211.611,
+          "deviation": 0.0878,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_left_thigh": {
+          "reference": 340.119,
+          "candidate": 320.075,
+          "deviation": 0.0589,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_right_thigh": {
+          "reference": 346.071,
+          "candidate": 328.193,
+          "deviation": 0.0517,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_left_shin": {
+          "reference": 256.008,
+          "candidate": 270.962,
+          "deviation": 0.0584,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "bone_right_shin": {
+          "reference": 266.31,
+          "candidate": 281.653,
+          "deviation": 0.0576,
+          "tolerance": 0.04,
+          "group": "bone_length"
+        },
+        "left_biceps": {
+          "reference": 111.0,
+          "candidate": 105.938,
+          "deviation": 0.0456,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "right_biceps": {
+          "reference": 129.0,
+          "candidate": 93.671,
+          "deviation": 0.2739,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "left_forearm": {
+          "reference": 41.0,
+          "candidate": 45.721,
+          "deviation": 0.1151,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "right_forearm": {
+          "reference": 141.0,
+          "candidate": 99.247,
+          "deviation": 0.2961,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "left_thigh": {
+          "reference": 134.0,
+          "candidate": 134.931,
+          "deviation": 0.007,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "right_thigh": {
+          "reference": 128.0,
+          "candidate": 130.471,
+          "deviation": 0.0193,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "left_calf": {
+          "reference": 84.0,
+          "candidate": 84.75,
+          "deviation": 0.0089,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "right_calf": {
+          "reference": 88.0,
+          "candidate": 85.865,
+          "deviation": 0.0243,
+          "tolerance": 0.07,
+          "group": "limb_width"
+        },
+        "head_width": {
+          "reference": 171.0,
+          "candidate": 212.991,
+          "deviation": 0.2456,
+          "tolerance": 0.05,
+          "group": "head_width"
+        },
+        "shoulder_width": {
+          "reference": 170.496,
+          "candidate": 189.573,
+          "deviation": 0.1119,
+          "tolerance": 0.05,
+          "group": "shoulder_width"
+        },
+        "torso_width": {
+          "reference": 139.058,
+          "candidate": 167.363,
+          "deviation": 0.2036,
+          "tolerance": 0.06,
+          "group": "torso_width"
+        },
+        "feet_baseline": {
+          "reference": 0.949,
+          "candidate": 0.949,
+          "deviation": 0.0,
+          "tolerance": 0.01,
+          "group": "feet_baseline"
+        }
+      }
+    }
+  }
+}

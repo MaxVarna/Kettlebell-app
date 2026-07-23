@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import statistics
@@ -135,7 +136,8 @@ def _horizontal_width(mask: Image.Image, y: float, center_x: float) -> float:
 
 def measure(frame: dict[str, Any], manifest_dir: Path) -> dict[str, Any]:
     landmarks = frame['landmarks']
-    mask, width, height = _alpha_mask((manifest_dir / frame['image']).resolve())
+    image_path = (manifest_dir / frame['image']).resolve()
+    mask, width, height = _alpha_mask(image_path)
     bones = {
         name: _distance(_point(landmarks, start), _point(landmarks, end))
         for name, (start, end) in BONES.items()
@@ -151,6 +153,8 @@ def measure(frame: dict[str, Any], manifest_dir: Path) -> dict[str, Any]:
     head_center = _midpoint(crown, chin)
     feet_y = max(_point(landmarks, 'left_foot')[1], _point(landmarks, 'right_foot')[1])
     return {
+        'image': frame['image'],
+        'imageSha256': hashlib.sha256(image_path.read_bytes()).hexdigest(),
         'canvas': [width, height],
         'bones': bones,
         'limbWidths': limb_widths,

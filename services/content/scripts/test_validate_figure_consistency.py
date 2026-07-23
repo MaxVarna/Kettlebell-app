@@ -57,6 +57,9 @@ class FigureConsistencyTest(unittest.TestCase):
             path = root / 'manifest.json'
             path.write_text(json.dumps(manifest), encoding='utf-8')
             report = validator.run(path)
+            self.assertEqual(len(report['measurements']['reference']['imageSha256']), 64)
+            self.assertEqual(report['measurements']['reference']['imageSha256'], report['measurements']['same']['imageSha256'])
+            self.assertNotEqual(report['measurements']['reference']['imageSha256'], report['measurements']['changed']['imageSha256'])
             self.assertEqual(report['comparisons']['same']['status'], 'pass')
             self.assertEqual(report['comparisons']['changed']['status'], 'reject')
             self.assertEqual(report['status'], 'reject')
