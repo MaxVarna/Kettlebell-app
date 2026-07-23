@@ -27,17 +27,6 @@ export type ExerciseRecord = {
 };
 
 const legacyExerciseVisuals: Readonly<Record<string, ExerciseVisualSet>> = {
-  'two-hand-swing': {
-    thumbnail: {
-      male: require('../../assets/movements/swing-top-anchored-v1.png'),
-      female: require('../../assets/movements/swing-top-anchored-v1.png'),
-    },
-    frames: {
-      male: [require('../../assets/movements/swing-bottom-anchored-v1.png'), require('../../assets/movements/swing-top-anchored-v1.png')],
-      female: [require('../../assets/movements/swing-bottom-anchored-v1.png'), require('../../assets/movements/swing-top-anchored-v1.png')],
-    },
-    anatomy: require('../../assets/movements/swing-zones-approved-v3.png'),
-  },
   'goblet-squat': {
     thumbnail: {
       male: require('../../assets/movements/goblet-squat-standing-anchored-v1.png'),
@@ -74,7 +63,7 @@ const exerciseVisuals: Readonly<Record<string, ExerciseVisualSet>> = {
   ...generatedExerciseVisuals,
 };
 
-const fallbackVisual = legacyExerciseVisuals['two-hand-swing']!;
+const fallbackVisual = generatedExerciseVisuals['two-hand-swing']!;
 
 export const exerciseThumbnail = (exerciseId: string, variant: FigureVariant): ImageSourcePropType => {
   const visual = exerciseVisuals[exerciseId] ?? fallbackVisual;
@@ -121,27 +110,6 @@ const generatedEditorialQueue: readonly ExerciseRecord[] = publishedExerciseReco
  * Source-checked records are safe for the initial catalogue; a trainer can later add a deeper review.
  */
 const legacyExerciseEditorialQueue: readonly ExerciseRecord[] = [
-  {
-    id: 'two-hand-swing',
-    name: 'Двуручный свинг',
-    movementKind: 'ballistic',
-    keyPose: 'Верхняя позиция: стойка, длинные руки, гиря перед корпусом; спина нейтральна.',
-    cueDrafts: ['Петля начинается от разгибания таза.', 'Сохраняй длинные руки и нейтральную спину.'],
-    zoneMap: ['плечи', 'корпус', 'ягодицы'],
-    sourceUrls: [
-      'https://www.acefitness.org/resources/everyone/exercise-library/391/swing/',
-      'https://www.nsca.com/education/articles/kinetic-select/two-arm-kettlebell-swing/',
-      'https://pubmed.ncbi.nlm.nih.gov/26618061/',
-      'https://pubmed.ncbi.nlm.nih.gov/30911671/',
-    ],
-    review: { status: 'source_checked' },
-    assets: {
-      thumbnail: 'assets/movements/swing-top.png',
-      runnerStatic: 'assets/movements/swing-top.png',
-      zoneMap: 'assets/movements/swing-zones-approved-v3.png',
-      motionReady: false,
-    },
-  },
   {
     id: 'goblet-squat',
     name: 'Гоблет-присед',

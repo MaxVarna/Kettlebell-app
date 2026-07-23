@@ -2,5 +2,9 @@
   {
     "id": "kettlebell-deadlift",
     "sql": "kettlebell_deadlift.sql"
+  },
+  {
+    "id": "two-hand-swing",
+    "sql": "two_hand_swing.sql"
   }
 ]

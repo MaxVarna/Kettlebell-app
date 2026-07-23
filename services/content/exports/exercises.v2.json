@@ -151,5 +151,165 @@
       "laterality": "bilateral",
       "movementKind": "grind"
     }
+  },
+  {
+    "id": "two-hand-swing",
+    "cues": [
+      {
+        "id": "swing-cue-hips",
+        "text": "Разгоняй гирю разгибанием таза, а не руками.",
+        "sourceIds": [
+          "swing-src-ace",
+          "swing-src-nsca"
+        ]
+      },
+      {
+        "id": "swing-cue-spine",
+        "text": "Сохраняй нейтральную спину и длинные руки.",
+        "sourceIds": [
+          "swing-src-nsca"
+        ]
+      },
+      {
+        "id": "swing-cue-finish",
+        "text": "Заверши разгибание таза без отклонения назад.",
+        "sourceIds": [
+          "swing-src-nsca"
+        ]
+      }
+    ],
+    "name": "Двуручный свинг",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "swing-float"
+    },
+    "phases": [
+      {
+        "id": "swing-hike",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/swing-hike-male-anchored-v2.png",
+            "female": "assets/movements/swing-hike-female-anchored-v2.png"
+          },
+          "status": "approved",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы устойчивы; колени мягко согнуты; таз отведён назад; голени близки к вертикали; корпус длинный и нейтральный.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "За линией коленей между бёдрами; ядро продолжает дугу назад, рукоять удерживается двумя руками."
+        },
+        "shortName": "Замах назад",
+        "technique": "Сохраняя длинные руки и нейтральный позвоночник, отвести таз назад и провести гирю между бёдрами за вертикальную линию тела."
+      },
+      {
+        "id": "swing-float",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/swing-float-male-anchored-v2.png",
+            "female": "assets/movements/swing-float-female-anchored-v2.png"
+          },
+          "status": "approved",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы остаются на полу; таз и колени разогнуты; руки длинные; корпус и голова нейтральны.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "На позднем участке дуги перед корпусом; ядро находится дальше от корпуса, чем кисти, и не висит вертикально под рукоятью."
+        },
+        "shortName": "Подъём",
+        "technique": "Разогнуть таз и колени, направляя гирю вперёд и вверх по дуге без подъёма руками и без отклонения корпуса назад."
+      }
+    ],
+    "review": {
+      "notes": "Мужская и женская пары проверены владельцем; исправлены динамический замах и ориентация гири в поздней фазе подъёма.",
+      "phases": "approved",
+      "anatomy": "approved",
+      "visuals": "approved",
+      "reviewer": "owner",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Two-Hand Kettlebell Swing",
+      "Гиревой свинг"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/swing-zones-approved-v3.png",
+      "status": "approved",
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "deltoids"
+      ]
+    },
+    "sources": [
+      {
+        "id": "swing-src-ace",
+        "url": "https://www.acefitness.org/continuing-education/prosource/october-2015/5635/do-it-better-ace-s-technique-series-continues-with-the-two-handed-kettlebell-swing/",
+        "title": "Do it Better: The Two-handed Kettlebell Swing",
+        "supports": [
+          "cue.swing-hips-independent-check",
+          "phase.swing-float.independent-check",
+          "phase.swing-hike.independent-check"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "swing-src-emg",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26618061/",
+        "title": "EMG Analysis and Sagittal Plane Kinematics of the Two-Handed and Single-Handed Kettlebell Swing",
+        "supports": [
+          "anatomy.glutes"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      },
+      {
+        "id": "swing-src-nsca",
+        "url": "https://www.nsca.com/education/articles/kinetic-select/two-arm-kettlebell-swing/",
+        "title": "Two-Arm Kettlebell Swing",
+        "supports": [
+          "cue.swing-finish",
+          "cue.swing-hips",
+          "cue.swing-spine",
+          "phase.swing-float.technique",
+          "phase.swing-hike.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "NSCA"
+      },
+      {
+        "id": "swing-src-trunk",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41487958/",
+        "title": "Asymmetry of muscle co-activation during the two-armed kettlebell swing",
+        "supports": [
+          "anatomy.abdominals",
+          "anatomy.deltoids"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "basic",
+      "laterality": "bilateral",
+      "movementKind": "ballistic"
+    }
   }
 ]

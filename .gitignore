@@ -18,3 +18,8 @@ apps/mobile/assets/movements/kettlebell-deadlift-*-v2-alpha.png
 # Local Python bytecode from content-pipeline checks.
 __pycache__/
 *.py[cod]
+.venv/
+tmp/
+
+# Rejected visual probe; approved swing storyboards use v2.
+docs/visual-probes/two-hand-swing-female-consistency-storyboard-v1.png

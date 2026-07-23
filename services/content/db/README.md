@@ -13,6 +13,7 @@
 - `candidates/*.sql` — проверяемые карточки-кандидаты.
 - `SCHEMA.md` — соответствие полей контракту, ключевые решения, условия публикации.
 - `test_export.py` — тест детерминизма экспорта.
+- `test_candidate_deadlift.py`, `test_candidate_swing.py` — проверки реальных опубликованных кандидатов.
 - `requirements-test.txt` — зафиксированная зависимость теста (`pgserver==0.1.4`).
 - `../scripts/generate_mobile_catalogue.py` — экспорт утверждённых записей и Metro-манифеста.
 
