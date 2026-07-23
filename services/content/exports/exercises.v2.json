@@ -501,7 +501,7 @@
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-low-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-low-female-anchored-v3.png"
+            "female": "assets/movements/clean-press-low-female-storyboard-scale-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -522,7 +522,7 @@
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-rack-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-rack-female-anchored-v2.png"
+            "female": "assets/movements/clean-press-rack-female-storyboard-anchored-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -543,7 +543,7 @@
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-overhead-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-overhead-female-anchored-v3.png"
+            "female": "assets/movements/clean-press-overhead-female-storyboard-anchored-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -683,7 +683,7 @@
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-rack-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-rack-female-anchored-v2.png"
+            "female": "assets/movements/clean-press-rack-female-storyboard-anchored-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -704,7 +704,7 @@
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-overhead-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-overhead-female-anchored-v3.png"
+            "female": "assets/movements/clean-press-overhead-female-storyboard-anchored-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1

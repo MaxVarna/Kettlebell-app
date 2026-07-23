@@ -506,7 +506,7 @@ export const generatedExerciseRecords = [
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-low-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-low-female-anchored-v3.png"
+            "female": "assets/movements/clean-press-low-female-storyboard-scale-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -527,7 +527,7 @@ export const generatedExerciseRecords = [
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-rack-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-rack-female-anchored-v2.png"
+            "female": "assets/movements/clean-press-rack-female-storyboard-anchored-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -548,7 +548,7 @@ export const generatedExerciseRecords = [
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-overhead-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-overhead-female-anchored-v3.png"
+            "female": "assets/movements/clean-press-overhead-female-storyboard-anchored-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -688,7 +688,7 @@ export const generatedExerciseRecords = [
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-rack-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-rack-female-anchored-v2.png"
+            "female": "assets/movements/clean-press-rack-female-storyboard-anchored-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -709,7 +709,7 @@ export const generatedExerciseRecords = [
           "scale": 1.0,
           "assets": {
             "male": "assets/movements/clean-press-overhead-coherent-anchored-v1.png",
-            "female": "assets/movements/clean-press-overhead-female-anchored-v3.png"
+            "female": "assets/movements/clean-press-overhead-female-storyboard-anchored-v1.png"
           },
           "status": "reviewed",
           "feetBaseline": 0.1
@@ -1595,7 +1595,7 @@ export const generatedExerciseVisuals: Readonly<Record<string, ExerciseVisualSet
   "clean-and-press": {
     thumbnail: {
       male: require('../../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
-      female: require('../../../assets/movements/clean-press-rack-female-anchored-v2.png'),
+      female: require('../../../assets/movements/clean-press-rack-female-storyboard-anchored-v1.png'),
     },
     frames: {
       male: [
@@ -1604,9 +1604,9 @@ export const generatedExerciseVisuals: Readonly<Record<string, ExerciseVisualSet
         require('../../../assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
       ],
       female: [
-        require('../../../assets/movements/clean-press-low-female-anchored-v3.png'),
-        require('../../../assets/movements/clean-press-rack-female-anchored-v2.png'),
-        require('../../../assets/movements/clean-press-overhead-female-anchored-v3.png'),
+        require('../../../assets/movements/clean-press-low-female-storyboard-scale-v1.png'),
+        require('../../../assets/movements/clean-press-rack-female-storyboard-anchored-v1.png'),
+        require('../../../assets/movements/clean-press-overhead-female-storyboard-anchored-v1.png'),
       ],
     },
     anatomy: require('../../../assets/movements/clean-press-zones-v1.png'),
@@ -1614,7 +1614,7 @@ export const generatedExerciseVisuals: Readonly<Record<string, ExerciseVisualSet
   "one-arm-press": {
     thumbnail: {
       male: require('../../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
-      female: require('../../../assets/movements/clean-press-rack-female-anchored-v2.png'),
+      female: require('../../../assets/movements/clean-press-rack-female-storyboard-anchored-v1.png'),
     },
     frames: {
       male: [
@@ -1622,8 +1622,8 @@ export const generatedExerciseVisuals: Readonly<Record<string, ExerciseVisualSet
         require('../../../assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
       ],
       female: [
-        require('../../../assets/movements/clean-press-rack-female-anchored-v2.png'),
-        require('../../../assets/movements/clean-press-overhead-female-anchored-v3.png'),
+        require('../../../assets/movements/clean-press-rack-female-storyboard-anchored-v1.png'),
+        require('../../../assets/movements/clean-press-overhead-female-storyboard-anchored-v1.png'),
       ],
     },
     anatomy: require('../../../assets/movements/one-arm-press-zones-v1.png'),

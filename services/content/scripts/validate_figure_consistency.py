@@ -52,6 +52,8 @@ DEFAULT_TOLERANCES = {
     'feet_baseline': 0.01,
 }
 
+NON_EXCLUDABLE_METRICS = {'head_width', 'shoulder_width', 'torso_width', 'feet_baseline'}
+
 
 def _point(landmarks: dict[str, list[float]], name: str) -> Point:
     value = landmarks.get(name)
@@ -117,8 +119,10 @@ def _section_width(mask: Image.Image, a: Point, b: Point, position: float) -> fl
     return statistics.median(widths)
 
 
-def _horizontal_width(mask: Image.Image, y: float, center_x: float) -> float:
-    occupied = [x for x in range(mask.width) if mask.getpixel((x, round(y))) > 0]
+def _horizontal_width(mask: Image.Image, y: float, center_x: float, max_radius: float | None = None) -> float:
+    start = max(0, round(center_x - max_radius)) if max_radius is not None else 0
+    end = min(mask.width, round(center_x + max_radius + 1)) if max_radius is not None else mask.width
+    occupied = [x for x in range(start, end) if mask.getpixel((x, round(y))) > 0]
     if not occupied:
         raise ValueError('Не найден силуэт в горизонтальном сечении')
     center = min(occupied, key=lambda x: abs(x - center_x))
@@ -151,6 +155,7 @@ def measure(frame: dict[str, Any], manifest_dir: Path) -> dict[str, Any]:
     shoulders = (_point(landmarks, 'left_shoulder'), _point(landmarks, 'right_shoulder'))
     hips = (_point(landmarks, 'left_hip'), _point(landmarks, 'right_hip'))
     head_center = _midpoint(crown, chin)
+    head_height = _distance(crown, chin)
     feet_y = max(_point(landmarks, 'left_foot')[1], _point(landmarks, 'right_foot')[1])
     return {
         'image': frame['image'],
@@ -158,23 +163,42 @@ def measure(frame: dict[str, Any], manifest_dir: Path) -> dict[str, Any]:
         'canvas': [width, height],
         'bones': bones,
         'limbWidths': limb_widths,
-        'headWidth': _horizontal_width(mask, head_center[1], head_center[0]),
+        # Ограничиваем сечение областью головы: в overhead-позе поднятая рука
+        # или гиря может касаться волос и ошибочно расширять непрерывную alpha-область.
+        'headWidth': _horizontal_width(mask, head_center[1], head_center[0], head_height * 0.7),
         'shoulderWidth': _distance(*shoulders),
         'torsoWidth': _distance(*hips),
         'feetBaseline': feet_y / height,
     }
 
 
-def compare(reference: dict[str, Any], candidate: dict[str, Any], tolerances: dict[str, float]) -> dict[str, Any]:
+def compare(
+    reference: dict[str, Any],
+    candidate: dict[str, Any],
+    tolerances: dict[str, float],
+    exclusions: dict[str, str] | None = None,
+    scale_mode: str = 'estimated',
+) -> dict[str, Any]:
     if reference['canvas'] != candidate['canvas']:
         return {'status': 'reject', 'reason': 'canvas_mismatch', 'metrics': {}}
-    scale_samples = [
-        reference['bones'][name] / candidate['bones'][name]
-        for name in BONES
-        if candidate['bones'][name] > 0
-    ]
-    scale = statistics.median(scale_samples)
-    metrics: dict[str, dict[str, float | str]] = {}
+    exclusions = exclusions or {}
+    forbidden_exclusions = set(exclusions) & NON_EXCLUDABLE_METRICS
+    if forbidden_exclusions:
+        raise ValueError(f'Нельзя исключать обязательные метрики: {sorted(forbidden_exclusions)}')
+    if scale_mode not in {'estimated', 'fixed'}:
+        raise ValueError(f'Неизвестный scaleMode: {scale_mode!r}')
+    if scale_mode == 'fixed':
+        scale = 1.0
+    else:
+        scale_samples = [
+            reference['bones'][name] / candidate['bones'][name]
+            for name in BONES
+            if candidate['bones'][name] > 0 and f'bone_{name}' not in exclusions
+        ]
+        if not scale_samples:
+            raise ValueError('Для estimated scaleMode нужна хотя бы одна неисключённая длина сегмента')
+        scale = statistics.median(scale_samples)
+    metrics: dict[str, dict[str, Any]] = {}
 
     def add(name: str, ref: float, value: float, tolerance: float, group: str, apply_scale: bool = True) -> None:
         normalized = value * scale if apply_scale else value
@@ -186,6 +210,11 @@ def compare(reference: dict[str, Any], candidate: dict[str, Any], tolerances: di
             'tolerance': tolerance,
             'group': group,
         }
+        if name in exclusions:
+            if not exclusions[name].strip():
+                raise ValueError(f'Для исключённой метрики {name!r} нужна причина')
+            metrics[name]['excluded'] = True
+            metrics[name]['exclusionReason'] = exclusions[name]
 
     for name in BONES:
         add(f'bone_{name}', reference['bones'][name], candidate['bones'][name], tolerances['bone_length'], 'bone_length')
@@ -196,8 +225,12 @@ def compare(reference: dict[str, Any], candidate: dict[str, Any], tolerances: di
     add('torso_width', reference['torsoWidth'], candidate['torsoWidth'], tolerances['torso_width'], 'torso_width')
     add('feet_baseline', reference['feetBaseline'], candidate['feetBaseline'], tolerances['feet_baseline'], 'feet_baseline', False)
 
-    exceeded = [item for item in metrics.values() if item['deviation'] > item['tolerance']]
-    severe = [item for item in metrics.values() if item['deviation'] > item['tolerance'] * 1.5]
+    unknown_exclusions = set(exclusions) - set(metrics)
+    if unknown_exclusions:
+        raise ValueError(f'Неизвестные исключённые метрики: {sorted(unknown_exclusions)}')
+    evaluated = [item for item in metrics.values() if not item.get('excluded')]
+    exceeded = [item for item in evaluated if item['deviation'] > item['tolerance']]
+    severe = [item for item in evaluated if item['deviation'] > item['tolerance'] * 1.5]
     status = 'reject' if severe or len(exceeded) >= 2 else 'warn' if exceeded else 'pass'
     return {'status': status, 'scale': round(scale, 6), 'metrics': metrics}
 
@@ -207,11 +240,19 @@ def run(manifest_path: Path) -> dict[str, Any]:
     tolerances = {**DEFAULT_TOLERANCES, **manifest.get('tolerances', {})}
     frames = manifest['frames']
     reference_id = manifest['referenceFrame']
+    scale_mode = manifest.get('scaleMode', 'estimated')
     measured = {frame['id']: measure(frame, manifest_path.parent) for frame in frames}
     if reference_id not in measured:
         raise ValueError(f'Не найден referenceFrame {reference_id!r}')
+    frames_by_id = {frame['id']: frame for frame in frames}
     comparisons = {
-        frame_id: compare(measured[reference_id], values, tolerances)
+        frame_id: compare(
+            measured[reference_id],
+            values,
+            tolerances,
+            frames_by_id[frame_id].get('excludeMetrics', {}),
+            scale_mode,
+        )
         for frame_id, values in measured.items()
         if frame_id != reference_id
     }
@@ -221,6 +262,7 @@ def run(manifest_path: Path) -> dict[str, Any]:
     return {
         'schemaVersion': 1,
         'referenceFrame': reference_id,
+        'scaleMode': scale_mode,
         'status': overall,
         'tolerances': tolerances,
         'measurements': measured,

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "referenceFrame": "rack",
+  "scaleMode": "fixed",
+  "frames": [
+    {
+      "id": "rack",
+      "image": "../../apps/mobile/assets/movements/clean-press-rack-female-storyboard-anchored-v1.png",
+      "landmarks": {
+        "crown": [468, 278],
+        "chin": [524, 423],
+        "left_shoulder": [588, 474],
+        "right_shoulder": [412, 475],
+        "left_elbow": [637, 650],
+        "right_elbow": [394, 614],
+        "left_wrist": [649, 845],
+        "right_wrist": [456, 449],
+        "left_hip": [580, 760],
+        "right_hip": [418, 760],
+        "left_knee": [580, 1074],
+        "right_knee": [394, 1072],
+        "left_ankle": [607, 1328],
+        "right_ankle": [360, 1329],
+        "left_foot": [615, 1451],
+        "right_foot": [367, 1457]
+      }
+    },
+    {
+      "id": "lockout",
+      "image": "../../apps/mobile/assets/movements/clean-press-overhead-female-storyboard-anchored-v1.png",
+      "excludeMetrics": {
+        "bone_left_upper_arm": "При жиме поднимается и разворачивается плечевой пояс; длина опущенной руки в проекции меняется.",
+        "bone_left_forearm": "При жиме разворачивается плечевой пояс; длина опущенного предплечья в проекции меняется.",
+        "bone_right_upper_arm": "Рабочая рука поднята над головой: длина в проекции меняется из-за ракурса и позы.",
+        "bone_right_forearm": "Рабочая рука выпрямлена над головой: длина в проекции меняется из-за ракурса и позы.",
+        "left_biceps": "Плечевой пояс поднят и развёрнут, а сечение попадает на край рукава; толщина несопоставима с rack-позой.",
+        "right_biceps": "Рабочая рука поднята и частично перекрывает волосы; поперечное сечение несопоставимо с rack-позой.",
+        "right_forearm": "Рабочая рука поднята и удерживает гирю; поперечное сечение несопоставимо с rack-позой."
+      },
+      "landmarks": {
+        "crown": [490, 242],
+        "chin": [546, 391],
+        "left_shoulder": [590, 419],
+        "right_shoulder": [414, 402],
+        "left_elbow": [647, 610],
+        "right_elbow": [395, 202],
+        "left_wrist": [664, 830],
+        "right_wrist": [423, 31],
+        "left_hip": [581, 750],
+        "right_hip": [419, 749],
+        "left_knee": [589, 1076],
+        "right_knee": [391, 1072],
+        "left_ankle": [620, 1326],
+        "right_ankle": [365, 1329],
+        "left_foot": [627, 1450],
+        "right_foot": [373, 1457]
+      }
+    }
+  ]
+}

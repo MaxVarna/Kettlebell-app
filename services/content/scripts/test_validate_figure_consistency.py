@@ -40,6 +40,26 @@ def draw_person(path: Path, calf_width: int = 14, biceps_width: int = 14) -> Non
 
 
 class FigureConsistencyTest(unittest.TestCase):
+    def test_fixed_scale_does_not_renormalize_candidate(self) -> None:
+        measurement = {
+            'canvas': [100, 100],
+            'bones': {name: 10.0 for name in validator.BONES},
+            'limbWidths': {name: 10.0 for name in validator.WIDTH_SAMPLES},
+            'headWidth': 10.0,
+            'shoulderWidth': 10.0,
+            'torsoWidth': 10.0,
+            'feetBaseline': 0.9,
+        }
+        candidate = {
+            **measurement,
+            'bones': {name: 20.0 for name in validator.BONES},
+        }
+        estimated = validator.compare(measurement, candidate, validator.DEFAULT_TOLERANCES)
+        fixed = validator.compare(measurement, candidate, validator.DEFAULT_TOLERANCES, scale_mode='fixed')
+        self.assertEqual(estimated['scale'], 0.5)
+        self.assertEqual(fixed['scale'], 1.0)
+        self.assertEqual(fixed['status'], 'reject')
+
     def test_passes_same_body_and_rejects_changed_calf_and_biceps(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
@@ -52,6 +72,17 @@ class FigureConsistencyTest(unittest.TestCase):
                     {'id': 'reference', 'image': 'reference.png', 'landmarks': LANDMARKS},
                     {'id': 'same', 'image': 'same.png', 'landmarks': LANDMARKS},
                     {'id': 'changed', 'image': 'changed.png', 'landmarks': LANDMARKS},
+                    {
+                        'id': 'changed_excluded',
+                        'image': 'changed.png',
+                        'landmarks': LANDMARKS,
+                        'excludeMetrics': {
+                            'left_biceps': 'тестовое перекрытие',
+                            'right_biceps': 'тестовое перекрытие',
+                            'left_calf': 'тестовое перекрытие',
+                            'right_calf': 'тестовое перекрытие'
+                        },
+                    },
                 ],
             }
             path = root / 'manifest.json'
@@ -62,6 +93,8 @@ class FigureConsistencyTest(unittest.TestCase):
             self.assertNotEqual(report['measurements']['reference']['imageSha256'], report['measurements']['changed']['imageSha256'])
             self.assertEqual(report['comparisons']['same']['status'], 'pass')
             self.assertEqual(report['comparisons']['changed']['status'], 'reject')
+            self.assertEqual(report['comparisons']['changed_excluded']['status'], 'pass')
+            self.assertTrue(report['comparisons']['changed_excluded']['metrics']['left_calf']['excluded'])
             self.assertEqual(report['status'], 'reject')
 
 
