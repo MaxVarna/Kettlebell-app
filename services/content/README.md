@@ -12,12 +12,14 @@
    - `exports/exercises.v2.json` — переносимый снимок опубликованных записей;
    - `apps/mobile/src/content/generated/exerciseCatalogue.generated.ts` — данные и статические `require()` для Metro.
 4. Мобильное приложение читает общий реестр; добавление следующего утверждённого упражнения не требует условий по его `id` в `App.tsx`.
+5. `scripts/validate_motion_assets.py` проверяет все фазовые PNG: отдельные male/female-файлы, холст, прозрачные углы, общую линию стоп и существование анатомических схем.
 
 После установки тестовых зависимостей из `db/requirements-test.txt` запускать из корня репозитория:
 
 ```text
 python services/content/scripts/generate_mobile_catalogue.py
 python services/content/scripts/generate_mobile_catalogue.py --check
+python services/content/scripts/validate_motion_assets.py
 ```
 
-Первый режим обновляет артефакты, второй завершается ошибкой, если они расходятся с БД или отсутствует указанный ассет. Сервер и API пока не поднимаются: генерация выполняется на этапе подготовки сборки.
+Для обработки и проверки PNG установить `requirements-tools.txt` в виртуальное окружение. Первый режим обновляет артефакты, второй завершается ошибкой, если они расходятся с БД или отсутствует указанный ассет. Сервер и API пока не поднимаются: генерация выполняется на этапе подготовки сборки.

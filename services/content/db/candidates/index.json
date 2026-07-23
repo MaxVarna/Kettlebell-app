@@ -6,5 +6,37 @@
   {
     "id": "two-hand-swing",
     "sql": "two_hand_swing.sql"
+  },
+  {
+    "id": "goblet-squat",
+    "sql": "goblet_squat.sql"
+  },
+  {
+    "id": "clean-and-press",
+    "sql": "clean_and_press.sql"
+  },
+  {
+    "id": "one-arm-press",
+    "sql": "one_arm_press.sql"
+  },
+  {
+    "id": "one-arm-clean",
+    "sql": "one_arm_clean.sql"
+  },
+  {
+    "id": "one-arm-row",
+    "sql": "one_arm_row.sql"
+  },
+  {
+    "id": "goblet-reverse-lunge",
+    "sql": "goblet_reverse_lunge.sql"
+  },
+  {
+    "id": "one-arm-swing",
+    "sql": "one_arm_swing.sql"
+  },
+  {
+    "id": "one-arm-snatch",
+    "sql": "one_arm_snatch.sql"
   }
 ]

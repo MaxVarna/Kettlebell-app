@@ -311,5 +311,1248 @@
       "laterality": "bilateral",
       "movementKind": "ballistic"
     }
+  },
+  {
+    "id": "goblet-squat",
+    "cues": [
+      {
+        "id": "goblet-cue-chest",
+        "text": "Держи гирю у груди, а корпус — собранным.",
+        "sourceIds": [
+          "goblet-src-ace-library"
+        ]
+      },
+      {
+        "id": "goblet-cue-knees",
+        "text": "Направляй колени туда же, куда смотрят носки.",
+        "sourceIds": [
+          "goblet-src-nasm"
+        ]
+      },
+      {
+        "id": "goblet-cue-stand",
+        "text": "Встань, сохраняя устойчивую опору всей стопой.",
+        "sourceIds": [
+          "goblet-src-ace-kb"
+        ]
+      }
+    ],
+    "name": "Гоблет-присед",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "goblet-stand"
+    },
+    "phases": [
+      {
+        "id": "goblet-stand",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/goblet-squat-standing-anchored-v1.png",
+            "female": "assets/movements/goblet-squat-standing-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы примерно на ширине плеч, носки слегка развёрнуты; колени и таз разогнуты; грудная клетка над тазом.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "У верхней части груди; обе кисти удерживают рукоять по бокам."
+        },
+        "shortName": "Стойка",
+        "technique": "Стоять устойчиво, удерживая гирю двумя руками у груди и сохраняя вертикальный нейтральный корпус."
+      },
+      {
+        "id": "goblet-bottom",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/goblet-squat-bottom-anchored-v1.png",
+            "female": "assets/movements/goblet-squat-bottom-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Пятки на полу; колени следуют направлению носков; таз опущен; грудная клетка остаётся поднятой.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Остаётся у груди; локти направлены вниз и немного вперёд."
+        },
+        "shortName": "Нижняя позиция",
+        "technique": "Одновременно согнуть таз и колени, опускаясь между стопами без потери устойчивой опоры и нейтрального положения спины."
+      }
+    ],
+    "review": {
+      "notes": "Мужская и женская пары нормализованы автоматически; окончательная проверка анимации владельцем на телефоне ожидается.",
+      "phases": "reviewed",
+      "anatomy": "reviewed",
+      "visuals": "reviewed",
+      "reviewer": "content-pipeline",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Goblet Squat",
+      "Присед с гирей у груди"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/goblet-lunge-zones-v2.png",
+      "status": "reviewed",
+      "primary": [
+        "glutes",
+        "quadriceps"
+      ],
+      "secondary": [
+        "abdominals",
+        "hamstrings"
+      ]
+    },
+    "sources": [
+      {
+        "id": "goblet-src-ace-kb",
+        "url": "https://www.acefitness.org/resources/pros/expert-articles/5269/how-to-get-started-with-kettlebells/",
+        "title": "How to Get Started With Kettlebells",
+        "supports": [
+          "cue.goblet-stand",
+          "phase.goblet-bottom.technique",
+          "phase.goblet-stand.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "goblet-src-ace-library",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/",
+        "title": "Goblet Squat",
+        "supports": [
+          "cue.goblet-chest"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "goblet-src-nasm",
+        "url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+        "title": "Goblet Squat",
+        "supports": [
+          "anatomy.abdominals",
+          "anatomy.glutes",
+          "anatomy.hamstrings",
+          "anatomy.quadriceps",
+          "cue.goblet-knees",
+          "phase.goblet-bottom.independent-check",
+          "phase.goblet-stand.independent-check"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "National Academy of Sports Medicine"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "basic",
+      "laterality": "bilateral",
+      "movementKind": "grind"
+    }
+  },
+  {
+    "id": "clean-and-press",
+    "cues": [
+      {
+        "id": "clean-press-cue-hips",
+        "text": "Подними гирю импульсом от таза, а не сгибанием руки.",
+        "sourceIds": [
+          "clean-press-src-ace"
+        ]
+      },
+      {
+        "id": "clean-press-cue-rack",
+        "text": "Прими гирю мягко на предплечье у плеча.",
+        "sourceIds": [
+          "clean-press-src-ace"
+        ]
+      },
+      {
+        "id": "clean-press-cue-stack",
+        "text": "В жиме держи рёбра над тазом и не отклоняйся назад.",
+        "sourceIds": [
+          "clean-press-src-emg"
+        ]
+      }
+    ],
+    "name": "Подъём с жимом",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "clean-press-rack"
+    },
+    "phases": [
+      {
+        "id": "clean-press-hike",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-low-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-low-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы устойчивы; колени мягко согнуты; таз отведён назад; корпус длинный и нейтральный.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Между бёдрами в правой руке; ядро продолжает дугу назад."
+        },
+        "shortName": "Замах",
+        "technique": "Отвести таз назад и провести гирю правой рукой между бёдрами, сохраняя длинную руку и нейтральный позвоночник."
+      },
+      {
+        "id": "clean-press-rack",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-rack-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-rack-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Вертикальная устойчивая стойка; таз и колени разогнуты; корпус не отклонён назад.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "На внешней стороне правого предплечья у плеча; кисть нейтральна, локоть рядом с рёбрами."
+        },
+        "shortName": "Стойка у груди",
+        "technique": "Разогнуть таз, направить гирю близко к корпусу и мягко принять её на правое предплечье у плеча."
+      },
+      {
+        "id": "clean-press-lockout",
+        "order": 3,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-overhead-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-overhead-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы остаются на полу; рёбра над тазом; правая рука вертикальна; голова нейтральна.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Над правым плечом; локоть разогнут, гиря лежит за нейтральным запястьем."
+        },
+        "shortName": "Фиксация",
+        "technique": "Из стойки у груди выжать гирю правой рукой вверх до устойчивой фиксации без прогиба и отклонения корпуса."
+      }
+    ],
+    "review": {
+      "notes": "Трёхфазная последовательность и правая рабочая рука зафиксированы; окончательная проверка владельцем на телефоне ожидается.",
+      "phases": "reviewed",
+      "anatomy": "reviewed",
+      "visuals": "reviewed",
+      "reviewer": "content-pipeline",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Kettlebell Clean and Press",
+      "Подъём гири на грудь и жим"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/clean-press-zones-v1.png",
+      "status": "reviewed",
+      "primary": [
+        "deltoids",
+        "triceps"
+      ],
+      "secondary": [
+        "abdominals",
+        "glutes"
+      ]
+    },
+    "sources": [
+      {
+        "id": "clean-press-src-ace",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/383/clean-and-press/",
+        "title": "Clean and Press",
+        "supports": [
+          "anatomy.glutes",
+          "cue.clean-press-hips",
+          "cue.clean-press-rack",
+          "phase.clean-press-hike.technique",
+          "phase.clean-press-lockout.technique",
+          "phase.clean-press-rack.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "clean-press-src-emg",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36560129/",
+        "title": "The Effect of the Weight and Type of Equipment on Shoulder and Back Muscle Activity during the Overhead Press",
+        "supports": [
+          "anatomy.abdominals",
+          "anatomy.deltoids",
+          "cue.clean-press-stack"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      },
+      {
+        "id": "clean-press-src-nasm",
+        "url": "https://blog.nasm.org/mma/off-the-mat-training-for-martial-arts",
+        "title": "Off the Mat Training for Martial Arts",
+        "supports": [
+          "phase.clean-press-lockout.independent-check",
+          "phase.clean-press-rack.independent-check"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "National Academy of Sports Medicine"
+      },
+      {
+        "id": "clean-press-src-press-emg",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23096062/",
+        "title": "Effects of body position and loading modality on muscle activity and strength in shoulder presses",
+        "supports": [
+          "anatomy.triceps"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "advanced",
+      "laterality": "unilateral",
+      "movementKind": "complex"
+    }
+  },
+  {
+    "id": "one-arm-press",
+    "cues": [
+      {
+        "id": "press-cue-rack",
+        "text": "Начни из устойчивой стойки с гирей у плеча.",
+        "sourceIds": [
+          "press-src-ace"
+        ]
+      },
+      {
+        "id": "press-cue-stack",
+        "text": "Держи рёбра над тазом — не отклоняйся назад.",
+        "sourceIds": [
+          "press-src-nasm"
+        ]
+      },
+      {
+        "id": "press-cue-lock",
+        "text": "Заверши движение устойчивой фиксацией над плечом.",
+        "sourceIds": [
+          "press-src-ace"
+        ]
+      }
+    ],
+    "name": "Жим гири одной рукой",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "press-rack"
+    },
+    "phases": [
+      {
+        "id": "press-rack",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-rack-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-rack-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы устойчивы; таз и колени разогнуты; рёбра расположены над тазом; корпус не отклонён назад.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "На внешней стороне правого предплечья у плеча; правый локоть рядом с рёбрами."
+        },
+        "shortName": "Стойка у груди",
+        "technique": "Удерживать гирю на правом предплечье у плеча, сохраняя нейтральную кисть, устойчивую стойку и собранный корпус."
+      },
+      {
+        "id": "press-lockout",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-overhead-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-overhead-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы остаются на полу; колени и таз неподвижны; рёбра над тазом; правая рука вертикальна.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Над правым плечом; гиря лежит за нейтральным запястьем, локоть разогнут."
+        },
+        "shortName": "Фиксация",
+        "technique": "Выжать гирю правой рукой вверх до полного контролируемого разгибания локтя без прогиба и помощи ногами."
+      }
+    ],
+    "review": {
+      "notes": "Использует утверждённые положения стойки и фиксации из подъёма с жимом; device-проверка владельцем ожидается.",
+      "phases": "reviewed",
+      "anatomy": "reviewed",
+      "visuals": "reviewed",
+      "reviewer": "content-pipeline",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Single-Arm Kettlebell Press",
+      "Одноручный жим гири"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/one-arm-press-zones-v1.png",
+      "status": "reviewed",
+      "primary": [
+        "deltoids",
+        "triceps"
+      ],
+      "secondary": [
+        "abdominals"
+      ]
+    },
+    "sources": [
+      {
+        "id": "press-src-ace",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/395/single-arm-overhead-press/",
+        "title": "Single Arm Overhead Press",
+        "supports": [
+          "cue.press-lockout",
+          "cue.press-rack",
+          "phase.press-lockout.technique",
+          "phase.press-rack.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "press-src-kb-emg",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36560129/",
+        "title": "The Effect of the Weight and Type of Equipment on Shoulder and Back Muscle Activity during the Overhead Press",
+        "supports": [
+          "anatomy.deltoids"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      },
+      {
+        "id": "press-src-nasm",
+        "url": "https://blog.nasm.org/kettlebell-workout",
+        "title": "Kettlebell Workout",
+        "supports": [
+          "cue.press-stack",
+          "phase.press-lockout.independent-check",
+          "phase.press-rack.independent-check"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "National Academy of Sports Medicine"
+      },
+      {
+        "id": "press-src-standing-emg",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23096062/",
+        "title": "Effects of body position and loading modality on muscle activity and strength in shoulder presses",
+        "supports": [
+          "anatomy.abdominals",
+          "anatomy.triceps"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "intermediate",
+      "laterality": "unilateral",
+      "movementKind": "grind"
+    }
+  },
+  {
+    "id": "one-arm-clean",
+    "cues": [
+      {
+        "id": "clean-cue-hips",
+        "text": "Разгони гирю разгибанием таза, а не сгибанием руки.",
+        "sourceIds": [
+          "clean-src-ace"
+        ]
+      },
+      {
+        "id": "clean-cue-close",
+        "text": "Проведи гирю близко к корпусу.",
+        "sourceIds": [
+          "clean-src-ace"
+        ]
+      },
+      {
+        "id": "clean-cue-soft",
+        "text": "Прими гирю мягко на предплечье у плеча.",
+        "sourceIds": [
+          "clean-src-nasm"
+        ]
+      }
+    ],
+    "name": "Подъём гири на грудь",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "clean-rack"
+    },
+    "phases": [
+      {
+        "id": "clean-hike",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-low-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-low-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы устойчивы; колени мягко согнуты; таз отведён назад; корпус длинный и нейтральный.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Между бёдрами в правой руке; ядро продолжает дугу назад."
+        },
+        "shortName": "Замах",
+        "technique": "Отвести таз назад и провести гирю правой рукой между бёдрами, сохраняя длинную руку и нейтральный позвоночник."
+      },
+      {
+        "id": "clean-rack",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-rack-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-rack-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Вертикальная устойчивая стойка; таз и колени разогнуты; корпус не отклонён назад.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "На внешней стороне правого предплечья у плеча; кисть нейтральна, локоть рядом с рёбрами."
+        },
+        "shortName": "Стойка у груди",
+        "technique": "Разогнуть таз, провести гирю близко к корпусу и мягко принять её на правое предплечье у плеча."
+      }
+    ],
+    "review": {
+      "notes": "Использует общие утверждённые кадры замаха и стойки; device-проверка владельцем ожидается.",
+      "phases": "reviewed",
+      "anatomy": "reviewed",
+      "visuals": "reviewed",
+      "reviewer": "content-pipeline",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Single-Arm Kettlebell Clean",
+      "Взятие гири на грудь"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/swing-zones-approved-v3.png",
+      "status": "reviewed",
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "deltoids"
+      ]
+    },
+    "sources": [
+      {
+        "id": "clean-src-ace",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/383/clean-and-press/",
+        "title": "Clean and Press",
+        "supports": [
+          "cue.clean-close",
+          "cue.clean-hips",
+          "phase.clean-hike.technique",
+          "phase.clean-rack.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "clean-src-emg",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28394829/",
+        "title": "Electromyographical Comparison of Muscle Activation Patterns Across Three Commonly Performed Kettlebell Exercises",
+        "supports": [
+          "anatomy.abdominals",
+          "anatomy.deltoids",
+          "anatomy.glutes"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      },
+      {
+        "id": "clean-src-nasm",
+        "url": "https://blog.nasm.org/mma/off-the-mat-training-for-martial-arts",
+        "title": "Off the Mat Training for Martial Arts",
+        "supports": [
+          "cue.clean-soft",
+          "phase.clean-rack.independent-check"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "National Academy of Sports Medicine"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "intermediate",
+      "laterality": "unilateral",
+      "movementKind": "ballistic"
+    }
+  },
+  {
+    "id": "one-arm-row",
+    "cues": [
+      {
+        "id": "row-cue-spine",
+        "text": "Сохраняй длинную нейтральную спину.",
+        "sourceIds": [
+          "row-src-ace"
+        ]
+      },
+      {
+        "id": "row-cue-elbow",
+        "text": "Веди локоть назад к тазу.",
+        "sourceIds": [
+          "row-src-nasm"
+        ]
+      },
+      {
+        "id": "row-cue-square",
+        "text": "Не разворачивай плечи вслед за гирей.",
+        "sourceIds": [
+          "row-src-ace"
+        ]
+      }
+    ],
+    "name": "Тяга гири в наклоне",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "row-pull"
+    },
+    "phases": [
+      {
+        "id": "row-low",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/one-arm-row-low-male-anchored-v1.png",
+            "female": "assets/movements/one-arm-row-low-female-anchored-v1.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы устойчивы; спина нейтральна; таз отведён назад; плечи остаются на одном уровне.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Под правым плечом; рука почти вертикальна, гиря не касается пола."
+        },
+        "shortName": "Нижняя точка",
+        "technique": "Отвести таз назад, опереться свободной рукой о бедро и удерживать гирю на длинной правой руке под плечом."
+      },
+      {
+        "id": "row-pull",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/one-arm-row-pull-male-anchored-v1.png",
+            "female": "assets/movements/one-arm-row-pull-female-anchored-v1.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Таз и корпус сохраняют положение; лопатка движется к позвоночнику; шея продолжает линию спины.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Рядом с правой стороной корпуса на уровне нижних рёбер и таза."
+        },
+        "shortName": "Тяга",
+        "technique": "Провести правый локоть назад и подтянуть гирю к правой стороне таза без разворота корпуса."
+      }
+    ],
+    "review": {
+      "notes": "Две фазы нормализованы по уровню стоп; финальная device-проверка владельцем ожидается.",
+      "phases": "reviewed",
+      "anatomy": "reviewed",
+      "visuals": "reviewed",
+      "reviewer": "content-pipeline",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Single-Arm Kettlebell Row",
+      "Одноручная тяга гири в наклоне"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/one-arm-row-zones-v1.png",
+      "status": "reviewed",
+      "primary": [
+        "latissimus"
+      ],
+      "secondary": [
+        "abdominals",
+        "biceps"
+      ]
+    },
+    "sources": [
+      {
+        "id": "row-src-ace",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/12/bent-over-row/",
+        "title": "Bent-over Row",
+        "supports": [
+          "anatomy.abdominals",
+          "cue.row-spine",
+          "cue.row-square"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "row-src-ace-research",
+        "url": "https://www.acefitness.org/continuing-education/certified/april-2018/6959/ace-sponsored-research-what-is-the-best-back-exercise/",
+        "title": "What Is the Best Back Exercise?",
+        "supports": [
+          "anatomy.biceps",
+          "anatomy.latissimus"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "row-src-nasm",
+        "url": "https://blog.nasm.org/kettlebell-workout",
+        "title": "Kettlebell Workout",
+        "supports": [
+          "cue.row-elbow",
+          "phase.row-low.technique",
+          "phase.row-pull.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "National Academy of Sports Medicine"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "basic",
+      "laterality": "unilateral",
+      "movementKind": "grind"
+    }
+  },
+  {
+    "id": "goblet-reverse-lunge",
+    "cues": [
+      {
+        "id": "lunge-cue-step",
+        "text": "Шагай назад достаточно далеко для устойчивой опоры.",
+        "sourceIds": [
+          "lunge-src-ace"
+        ]
+      },
+      {
+        "id": "lunge-cue-foot",
+        "text": "Оставляй переднюю стопу полностью на полу.",
+        "sourceIds": [
+          "lunge-src-research"
+        ]
+      },
+      {
+        "id": "lunge-cue-torso",
+        "text": "Держи корпус собранным и почти вертикальным.",
+        "sourceIds": [
+          "lunge-src-ace"
+        ]
+      }
+    ],
+    "name": "Обратный выпад с гирей у груди",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "lunge-bottom"
+    },
+    "phases": [
+      {
+        "id": "lunge-stand",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/goblet-squat-standing-anchored-v1.png",
+            "female": "assets/movements/goblet-squat-standing-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы под тазом; колени и таз разогнуты; рёбра расположены над тазом.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "У верхней части груди, обе кисти удерживают рукоять по бокам."
+        },
+        "shortName": "Стойка",
+        "technique": "Удерживать гирю двумя руками у груди в устойчивой вертикальной стойке."
+      },
+      {
+        "id": "lunge-bottom",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/reverse-lunge-bottom-male-anchored-v1.png",
+            "female": "assets/movements/reverse-lunge-bottom-female-anchored-v1.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "transition",
+          "bodyPosition": "Переднее колено следует направлению носка; задняя пятка поднята; корпус собран и почти вертикален.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "У груди; гиря не меняет положение относительно корпуса."
+        },
+        "shortName": "Выпад назад",
+        "technique": "Шагнуть правой ногой назад и опустить заднее колено к полу, сохраняя опору на всей передней стопе."
+      }
+    ],
+    "review": {
+      "notes": "Стойка переиспользует утверждённый goblet hold; нижняя фаза создана отдельно и выровнена по стопам.",
+      "phases": "reviewed",
+      "anatomy": "reviewed",
+      "visuals": "reviewed",
+      "reviewer": "content-pipeline",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Goblet Reverse Lunge",
+      "Обратный выпад с гоблет-удержанием"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/goblet-lunge-zones-v2.png",
+      "status": "reviewed",
+      "primary": [
+        "glutes",
+        "quadriceps"
+      ],
+      "secondary": [
+        "hamstrings"
+      ]
+    },
+    "sources": [
+      {
+        "id": "lunge-src-ace",
+        "url": "https://www.acefitness.org/resources/pros/expert-articles/5651/metabolic-conditioning-kettlebell-complex/",
+        "title": "Metabolic Conditioning: Kettlebell Complex",
+        "supports": [
+          "cue.lunge-step",
+          "cue.lunge-torso",
+          "phase.lunge-bottom.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "lunge-src-nasm",
+        "url": "https://blog.nasm.org/how-kettlebell-workouts-can-take-your-fitness-to-the-next-level",
+        "title": "How Kettlebell Workouts Can Take Your Fitness to the Next Level",
+        "supports": [
+          "phase.lunge-stand.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "National Academy of Sports Medicine"
+      },
+      {
+        "id": "lunge-src-research",
+        "url": "https://www.mdpi.com/2076-3417/14/24/11480",
+        "title": "Effects of Forward and Backward Lunges on Lower-Limb Muscle Activation",
+        "supports": [
+          "anatomy.glutes",
+          "anatomy.hamstrings",
+          "anatomy.quadriceps",
+          "cue.lunge-foot"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "Applied Sciences"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "basic",
+      "laterality": "alternating",
+      "movementKind": "grind"
+    }
+  },
+  {
+    "id": "one-arm-swing",
+    "cues": [
+      {
+        "id": "one-swing-cue-hinge",
+        "text": "Двигай гирю разгибанием таза, а не подъёмом плеча.",
+        "sourceIds": [
+          "one-swing-src-ace"
+        ]
+      },
+      {
+        "id": "one-swing-cue-square",
+        "text": "Не разворачивай корпус вслед за гирей.",
+        "sourceIds": [
+          "one-swing-src-nasm"
+        ]
+      },
+      {
+        "id": "one-swing-cue-arc",
+        "text": "Позволь гире лететь по дуге на длинной руке.",
+        "sourceIds": [
+          "one-swing-src-ace"
+        ]
+      }
+    ],
+    "name": "Свинг гири одной рукой",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "one-swing-float"
+    },
+    "phases": [
+      {
+        "id": "one-swing-hike",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-low-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-low-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы устойчивы; голени почти вертикальны; таз отведён назад; плечи остаются ровными.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Между бёдрами в правой руке; ядро продолжает дугу назад."
+        },
+        "shortName": "Замах",
+        "technique": "Отвести таз назад и направить гирю правой рукой высоко между бёдрами, сохраняя длинную руку и нейтральную спину."
+      },
+      {
+        "id": "one-swing-float",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/one-arm-swing-float-male-anchored-v1.png",
+            "female": "assets/movements/one-arm-swing-float-female-anchored-v1.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Таз и колени разогнуты; рёбра над тазом; свободная левая рука уравновешивает движение.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Перед корпусом на уровне нижней части груди; рукоять продолжает дугу движения."
+        },
+        "shortName": "Вылет",
+        "technique": "Резко разогнуть таз и дать гире свободно вылететь на длинной правой руке примерно до уровня груди."
+      }
+    ],
+    "review": {
+      "notes": "Правый рабочий вариант; кадры согласованы по росту фигуры и уровню стоп, а не по внешнему bbox гири.",
+      "phases": "reviewed",
+      "anatomy": "reviewed",
+      "visuals": "reviewed",
+      "reviewer": "content-pipeline",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Single-Arm Kettlebell Swing",
+      "Одноручный свинг"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/swing-zones-approved-v3.png",
+      "status": "reviewed",
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "deltoids"
+      ]
+    },
+    "sources": [
+      {
+        "id": "one-swing-src-ace",
+        "url": "https://www.acefitness.org/resources/pros/expert-articles/5269/how-to-get-started-with-kettlebells/",
+        "title": "How to Get Started With Kettlebells",
+        "supports": [
+          "cue.one-swing-arc",
+          "cue.one-swing-hinge",
+          "phase.one-swing-float.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "one-swing-src-emg",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28394829/",
+        "title": "A Comparison of Muscle Activation Between the Kettlebell Swing, Snatch and Bottoms-Up Carry",
+        "supports": [
+          "anatomy.abdominals",
+          "anatomy.deltoids",
+          "anatomy.glutes"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      },
+      {
+        "id": "one-swing-src-nasm",
+        "url": "https://blog.nasm.org/how-kettlebell-workouts-can-take-your-fitness-to-the-next-level",
+        "title": "How Kettlebell Workouts Can Take Your Fitness to the Next Level",
+        "supports": [
+          "cue.one-swing-square",
+          "phase.one-swing-hike.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "National Academy of Sports Medicine"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "intermediate",
+      "laterality": "unilateral",
+      "movementKind": "ballistic"
+    }
+  },
+  {
+    "id": "one-arm-snatch",
+    "cues": [
+      {
+        "id": "snatch-cue-hips",
+        "text": "Разгоняй гирю разгибанием таза.",
+        "sourceIds": [
+          "snatch-src-ace"
+        ]
+      },
+      {
+        "id": "snatch-cue-close",
+        "text": "Проводи гирю близко к корпусу.",
+        "sourceIds": [
+          "snatch-src-ace"
+        ]
+      },
+      {
+        "id": "snatch-cue-punch",
+        "text": "Продень кисть в рукоять и мягко поймай гирю сверху.",
+        "sourceIds": [
+          "snatch-src-ace-shape"
+        ]
+      }
+    ],
+    "name": "Рывок гири одной рукой",
+    "assets": {
+      "styleId": "approved-athlete-v1",
+      "anatomyStyleId": "approved-anatomy-v1",
+      "thumbnailPhaseId": "snatch-lockout"
+    },
+    "phases": [
+      {
+        "id": "snatch-hike",
+        "order": 1,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-low-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-low-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы устойчивы; таз отведён назад; корпус собран; плечи ровные.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Между бёдрами в правой руке; ядро направлено назад по дуге."
+        },
+        "shortName": "Замах",
+        "technique": "Отвести таз назад и провести гирю правой рукой между бёдрами, сохраняя длинную руку и нейтральную спину."
+      },
+      {
+        "id": "snatch-insertion",
+        "order": 2,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/snatch-high-pull-male-anchored-v1.png",
+            "female": "assets/movements/snatch-high-pull-female-anchored-v1.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Таз почти разогнут; корпус вертикален; свободная рука уравновешивает движение.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Близко к корпусу на уровне груди; правый локоть ведёт движение, гиря не уходит далеко вперёд."
+        },
+        "shortName": "Подрыв",
+        "technique": "Мощно разогнуть таз, провести гирю близко к корпусу и направить локоть вверх, начиная продевание кисти в рукоять."
+      },
+      {
+        "id": "snatch-lockout",
+        "order": 3,
+        "visual": {
+          "scale": 1.0,
+          "assets": {
+            "male": "assets/movements/clean-press-overhead-coherent-anchored-v1.png",
+            "female": "assets/movements/clean-press-overhead-female-anchored-v2.png"
+          },
+          "status": "reviewed",
+          "feetBaseline": 0.1
+        },
+        "poseBrief": {
+          "support": "bilateral",
+          "bodyPosition": "Стопы на полу; колени и таз разогнуты; рёбра над тазом; плечевой пояс устойчив.",
+          "bodyOrientation": "three_quarter",
+          "kettlebellPosition": "Над правым плечом; гиря лежит за нейтральным запястьем, локоть полностью контролируемо разогнут."
+        },
+        "shortName": "Фиксация",
+        "technique": "Продеть кисть в рукоять и мягко зафиксировать гирю над правым плечом на прямой руке."
+      }
+    ],
+    "review": {
+      "notes": "Трёхфазная запись правой рукой; промежуточный кадр показывает близкую траекторию и продевание кисти.",
+      "phases": "reviewed",
+      "anatomy": "reviewed",
+      "visuals": "reviewed",
+      "reviewer": "content-pipeline",
+      "technique": "source_checked",
+      "reviewedAt": "2026-07-23T00:00:00Z"
+    },
+    "aliases": [
+      "Single-Arm Kettlebell Snatch",
+      "Рывок гири"
+    ],
+    "anatomy": {
+      "asset": "assets/movements/swing-zones-approved-v3.png",
+      "status": "reviewed",
+      "primary": [
+        "deltoids",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals"
+      ]
+    },
+    "sources": [
+      {
+        "id": "snatch-src-ace",
+        "url": "https://www.acefitness.org/resources/pros/expert-articles/5651/metabolic-conditioning-kettlebell-complex/",
+        "title": "Metabolic Conditioning: Kettlebell Complex",
+        "supports": [
+          "cue.snatch-close",
+          "cue.snatch-hips",
+          "phase.snatch-hike.technique",
+          "phase.snatch-insertion.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "snatch-src-ace-shape",
+        "url": "https://www.acefitness.org/about-ace/press-room/in-the-news/8250/how-to-do-the-kettlebell-snatch-to-feel-totally-powerful-shape/",
+        "title": "How to Do the Kettlebell Snatch",
+        "supports": [
+          "cue.snatch-punch",
+          "phase.snatch-lockout.technique"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "professional_standard",
+        "organization": "American Council on Exercise"
+      },
+      {
+        "id": "snatch-src-emg",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28394829/",
+        "title": "A Comparison of Muscle Activation Between the Kettlebell Swing, Snatch and Bottoms-Up Carry",
+        "supports": [
+          "anatomy.abdominals",
+          "anatomy.deltoids",
+          "anatomy.glutes"
+        ],
+        "accessedAt": "2026-07-23",
+        "sourceType": "research",
+        "organization": "PubMed"
+      }
+    ],
+    "schemaVersion": 2,
+    "classification": {
+      "experience": "advanced",
+      "laterality": "unilateral",
+      "movementKind": "ballistic"
+    }
   }
 ]

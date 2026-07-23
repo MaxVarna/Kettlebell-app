@@ -26,40 +26,7 @@ export type ExerciseRecord = {
   sourceRecord?: ExerciseRecordV2;
 };
 
-const legacyExerciseVisuals: Readonly<Record<string, ExerciseVisualSet>> = {
-  'goblet-squat': {
-    thumbnail: {
-      male: require('../../assets/movements/goblet-squat-standing-anchored-v1.png'),
-      female: require('../../assets/movements/goblet-squat-standing-anchored-v1.png'),
-    },
-    frames: {
-      male: [require('../../assets/movements/goblet-squat-standing-anchored-v1.png'), require('../../assets/movements/goblet-squat-bottom-anchored-v1.png')],
-      female: [require('../../assets/movements/goblet-squat-standing-anchored-v1.png'), require('../../assets/movements/goblet-squat-bottom-anchored-v1.png')],
-    },
-    anatomy: require('../../assets/movements/goblet-squat-zones.png'),
-  },
-  'clean-and-press': {
-    thumbnail: {
-      male: require('../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
-      female: require('../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
-    },
-    frames: {
-      male: [
-        require('../../assets/movements/clean-press-low-coherent-anchored-v1.png'),
-        require('../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
-        require('../../assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
-      ],
-      female: [
-        require('../../assets/movements/clean-press-low-coherent-anchored-v1.png'),
-        require('../../assets/movements/clean-press-rack-coherent-anchored-v1.png'),
-        require('../../assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
-      ],
-    },
-  },
-};
-
 const exerciseVisuals: Readonly<Record<string, ExerciseVisualSet>> = {
-  ...legacyExerciseVisuals,
   ...generatedExerciseVisuals,
 };
 
@@ -105,51 +72,7 @@ const generatedEditorialQueue: readonly ExerciseRecord[] = publishedExerciseReco
   };
 });
 
-/**
- * Editorial queue, deliberately separate from movements exposed in the builder.
- * Source-checked records are safe for the initial catalogue; a trainer can later add a deeper review.
- */
-const legacyExerciseEditorialQueue: readonly ExerciseRecord[] = [
-  {
-    id: 'goblet-squat',
-    name: 'Гоблет-присед',
-    movementKind: 'grind',
-    keyPose: 'Стойка: гиря двумя руками у груди, локти направлены вперёд; стопы примерно на ширине плеч.',
-    cueDrafts: ['Опускайся через таз и колени, уводя таз назад.', 'Сохраняй опору на стопы при подъёме.'],
-    zoneMap: ['квадрицепс', 'задняя поверхность бедра'],
-    sourceUrls: [
-      'https://www.acefitness.org/resources/pros/expert-articles/5269/how-to-get-started-with-kettlebells/',
-      'https://pubmed.ncbi.nlm.nih.gov/34341315/',
-    ],
-    review: { status: 'source_checked' },
-    assets: {
-      thumbnail: 'assets/movements/goblet-squat-standing.png',
-      runnerStatic: 'assets/movements/goblet-squat-standing.png',
-      zoneMap: 'assets/movements/goblet-squat-zones.png',
-      motionReady: false,
-    },
-  },
-  {
-    id: 'clean-and-press',
-    name: 'Подъём с жимом',
-    movementKind: 'complex',
-    keyPose: 'Нижняя позиция, стойка с гирей у груди и фиксация над головой.',
-    cueDrafts: ['Проведи гирю к груди и заверши движение устойчивой фиксацией над головой.'],
-    zoneMap: [],
-    sourceUrls: ['https://www.acefitness.org/resources/everyone/exercise-library/383/clean-and-press/'],
-    review: { status: 'source_checked' },
-    assets: {
-      thumbnail: 'assets/movements/clean-press-rack-coherent-anchored-v1.png',
-      runnerStatic: 'assets/movements/clean-press-rack-coherent-anchored-v1.png',
-      motionReady: true,
-    },
-  },
-];
-
-export const exerciseEditorialQueue: readonly ExerciseRecord[] = [
-  ...legacyExerciseEditorialQueue,
-  ...generatedEditorialQueue,
-];
+export const exerciseEditorialQueue: readonly ExerciseRecord[] = generatedEditorialQueue;
 
 export const catalogueExercises = exerciseEditorialQueue.filter(
   (exercise) =>
