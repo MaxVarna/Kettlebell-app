@@ -17,7 +17,7 @@ INSERT INTO exercise_phases(id,exercise_id,phase_order,short_name,technique,body
 
 INSERT INTO phase_assets(phase_id,figure_variant,asset_url) VALUES
  ('one-swing-hike','male','assets/movements/clean-press-low-coherent-anchored-v1.png'),('one-swing-float','male','assets/movements/one-arm-swing-float-male-anchored-v1.png'),
- ('one-swing-hike','female','assets/movements/clean-press-low-female-anchored-v2.png'),('one-swing-float','female','assets/movements/one-arm-swing-float-female-anchored-v1.png');
+ ('one-swing-hike','female','assets/movements/clean-press-low-female-anchored-v3.png'),('one-swing-float','female','assets/movements/one-arm-swing-float-female-anchored-v1.png');
 UPDATE exercises SET thumbnail_phase_id='one-swing-float' WHERE id='one-arm-swing';
 
 INSERT INTO exercise_cues(id,exercise_id,text,sort_order) VALUES

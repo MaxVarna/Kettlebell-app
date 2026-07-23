@@ -18,7 +18,7 @@ INSERT INTO exercise_phases(id,exercise_id,phase_order,short_name,technique,body
 
 INSERT INTO phase_assets(phase_id,figure_variant,asset_url) VALUES
  ('snatch-hike','male','assets/movements/clean-press-low-coherent-anchored-v1.png'),('snatch-insertion','male','assets/movements/snatch-high-pull-male-anchored-v1.png'),('snatch-lockout','male','assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
- ('snatch-hike','female','assets/movements/clean-press-low-female-anchored-v2.png'),('snatch-insertion','female','assets/movements/snatch-high-pull-female-anchored-v1.png'),('snatch-lockout','female','assets/movements/clean-press-overhead-female-anchored-v2.png');
+ ('snatch-hike','female','assets/movements/clean-press-low-female-anchored-v3.png'),('snatch-insertion','female','assets/movements/snatch-insertion-female-anchored-v2.png'),('snatch-lockout','female','assets/movements/clean-press-overhead-female-anchored-v2.png');
 UPDATE exercises SET thumbnail_phase_id='snatch-lockout' WHERE id='one-arm-snatch';
 
 INSERT INTO exercise_cues(id,exercise_id,text,sort_order) VALUES

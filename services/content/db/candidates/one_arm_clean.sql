@@ -47,7 +47,7 @@ VALUES
 INSERT INTO phase_assets(phase_id,figure_variant,asset_url) VALUES
  ('clean-hike','male','assets/movements/clean-press-low-coherent-anchored-v1.png'),
  ('clean-rack','male','assets/movements/clean-press-rack-coherent-anchored-v1.png'),
- ('clean-hike','female','assets/movements/clean-press-low-female-anchored-v2.png'),
+ ('clean-hike','female','assets/movements/clean-press-low-female-anchored-v3.png'),
  ('clean-rack','female','assets/movements/clean-press-rack-female-anchored-v2.png');
 
 UPDATE exercises SET thumbnail_phase_id='clean-rack' WHERE id='one-arm-clean';

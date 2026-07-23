@@ -55,7 +55,7 @@ INSERT INTO phase_assets(phase_id,figure_variant,asset_url) VALUES
  ('clean-press-hike','male','assets/movements/clean-press-low-coherent-anchored-v1.png'),
  ('clean-press-rack','male','assets/movements/clean-press-rack-coherent-anchored-v1.png'),
  ('clean-press-lockout','male','assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
- ('clean-press-hike','female','assets/movements/clean-press-low-female-anchored-v2.png'),
+ ('clean-press-hike','female','assets/movements/clean-press-low-female-anchored-v3.png'),
  ('clean-press-rack','female','assets/movements/clean-press-rack-female-anchored-v2.png'),
  ('clean-press-lockout','female','assets/movements/clean-press-overhead-female-anchored-v2.png');
 

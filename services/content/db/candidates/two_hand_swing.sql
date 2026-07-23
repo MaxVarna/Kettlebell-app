@@ -47,8 +47,8 @@ VALUES
 INSERT INTO phase_assets(phase_id,figure_variant,asset_url) VALUES
  ('swing-hike','male','assets/movements/swing-hike-male-anchored-v2.png'),
  ('swing-float','male','assets/movements/swing-float-male-anchored-v2.png'),
- ('swing-hike','female','assets/movements/swing-hike-female-anchored-v2.png'),
- ('swing-float','female','assets/movements/swing-float-female-anchored-v2.png');
+ ('swing-hike','female','assets/movements/swing-hike-female-anchored-v3.png'),
+ ('swing-float','female','assets/movements/swing-float-female-anchored-v3.png');
 
 UPDATE exercises SET thumbnail_phase_id='swing-float' WHERE id='two-hand-swing';
 
