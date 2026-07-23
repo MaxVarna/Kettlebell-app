@@ -4,43 +4,44 @@
   "rigStatus": "draft",
   "styleReview": "pending_owner_review",
   "readyForRender": false,
-  "source": "D:\\Kettlebell app\\services\\content\\rigs\\clean-press-female\\master-source-v1.png",
+  "source": "D:\\Kettlebell app\\services\\content\\rigs\\clean-press-female\\master-source-v2.png",
+  "visualReference": "D:\\Kettlebell app\\apps\\mobile\\assets\\movements\\clean-press-rack-female-storyboard-anchored-v1.png",
   "measuredSegments": {
-    "right_upper_arm": 168.297,
-    "right_forearm": 170.026
+    "right_upper_arm": 169.003,
+    "right_forearm": 171.003
   },
   "poseGeometry": {
     "rack": {
       "shoulder": [
-        454,
-        350
+        458,
+        383
       ],
       "elbow": [
-        430.58,
-        516.66
+        434.48,
+        550.36
       ],
       "wrist": [
-        454.24,
-        348.29
+        458.28,
+        381.02
       ],
-      "upperArmLength": 168.297,
-      "forearmLength": 170.026
+      "upperArmLength": 169.003,
+      "forearmLength": 171.003
     },
     "lockout": {
       "shoulder": [
-        454,
-        350
+        458,
+        383
       ],
       "elbow": [
-        454.0,
-        181.7
+        458.0,
+        214.0
       ],
       "wrist": [
-        454.0,
-        11.68
+        458.0,
+        42.99
       ],
-      "upperArmLength": 168.297,
-      "forearmLength": 170.026
+      "upperArmLength": 169.003,
+      "forearmLength": 171.003
     }
   },
   "errors": []

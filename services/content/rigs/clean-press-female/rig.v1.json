@@ -3,20 +3,22 @@
   "id": "clean-press-female",
   "status": "draft",
   "styleReview": "pending_owner_review",
-  "source": "master-source-v1.png",
+  "masterVersion": 2,
+  "source": "master-source-v2.png",
+  "visualReference": "../../../../apps/mobile/assets/movements/clean-press-rack-female-storyboard-anchored-v1.png",
   "canvas": [1024, 1536],
-  "feetBaseline": 1368,
+  "feetBaseline": 1350,
   "workingSide": "right",
   "lockedLayers": ["head", "torso", "left_arm", "pelvis", "left_leg", "right_leg"],
   "joints": {
-    "right_shoulder": [454, 350],
-    "right_elbow": [286, 360],
-    "right_wrist": [116, 357],
-    "kettlebell_handle": [116, 382]
+    "right_shoulder": [458, 383],
+    "right_elbow": [289, 382],
+    "right_wrist": [118, 381],
+    "kettlebell_handle": [118, 410]
   },
   "segments": {
-    "right_upper_arm": {"from": "right_shoulder", "to": "right_elbow", "length": 168.30},
-    "right_forearm": {"from": "right_elbow", "to": "right_wrist", "length": 170.03}
+    "right_upper_arm": {"from": "right_shoulder", "to": "right_elbow", "length": 169.00},
+    "right_forearm": {"from": "right_elbow", "to": "right_wrist", "length": 171.00}
   },
   "poses": [
     {

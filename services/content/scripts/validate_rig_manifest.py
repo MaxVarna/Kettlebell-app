@@ -24,6 +24,15 @@ def run(manifest_path: Path) -> dict[str, Any]:
         errors.append(f'missing source: {source_path}')
         return {'status': 'reject', 'errors': errors}
 
+    visual_reference = manifest.get('visualReference')
+    visual_reference_path = (
+        (manifest_path.parent / visual_reference).resolve()
+        if visual_reference
+        else None
+    )
+    if visual_reference_path and not visual_reference_path.exists():
+        errors.append(f'missing visual reference: {visual_reference_path}')
+
     image = Image.open(source_path).convert('RGBA')
     if list(image.size) != manifest['canvas']:
         errors.append(f"canvas mismatch: {image.size} != {manifest['canvas']}")
@@ -68,6 +77,7 @@ def run(manifest_path: Path) -> dict[str, Any]:
         'styleReview': manifest.get('styleReview'),
         'readyForRender': ready_for_render,
         'source': str(source_path),
+        'visualReference': str(visual_reference_path) if visual_reference_path else None,
         'measuredSegments': measured,
         'poseGeometry': pose_geometry,
         'errors': errors,
