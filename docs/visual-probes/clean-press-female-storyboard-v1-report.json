@@ -2,10 +2,11 @@
   "schemaVersion": 1,
   "referenceFrame": "rack",
   "scaleMode": "fixed",
-  "status": "pass",
+  "status": "reject",
   "tolerances": {
     "bone_length": 0.04,
-    "head_width": 0.05,
+    "head_width": 0.03,
+    "head_height": 0.02,
     "shoulder_width": 0.05,
     "torso_width": 0.06,
     "limb_width": 0.07,
@@ -30,16 +31,17 @@
         "right_shin": 259.2392717163046
       },
       "limbWidths": {
-        "left_biceps": 79.0,
-        "right_biceps": 101.0,
-        "left_forearm": 51.0,
-        "right_forearm": 127.0,
-        "left_thigh": 127.0,
-        "right_thigh": 122.0,
+        "left_biceps": 46.0,
+        "right_biceps": 51.0,
+        "left_forearm": 48.0,
+        "right_forearm": 65.0,
+        "left_thigh": 101.0,
+        "right_thigh": 105.0,
         "left_calf": 81.0,
-        "right_calf": 83.0
+        "right_calf": 79.0
       },
-      "headWidth": 153.0,
+      "headWidth": 118.0,
+      "headHeight": 155.43809056984713,
       "shoulderWidth": 176.00284088616297,
       "torsoWidth": 162.0,
       "feetBaseline": 0.9485677083333334
@@ -62,16 +64,17 @@
         "right_shin": 258.3118270617898
       },
       "limbWidths": {
-        "left_biceps": 92.0,
-        "right_biceps": 101.0,
+        "left_biceps": 56.0,
+        "right_biceps": 65.0,
         "left_forearm": 50.0,
-        "right_forearm": 80.0,
-        "left_thigh": 127.0,
-        "right_thigh": 120.0,
+        "right_forearm": 49.0,
+        "left_thigh": 117.0,
+        "right_thigh": 88.0,
         "left_calf": 83.0,
         "right_calf": 84.0
       },
-      "headWidth": 160.0,
+      "headWidth": 113.0,
+      "headHeight": 159.17600321656528,
       "shoulderWidth": 176.81911661356077,
       "torsoWidth": 162.00308639035245,
       "feetBaseline": 0.9485677083333334
@@ -79,7 +82,7 @@
   },
   "comparisons": {
     "lockout": {
-      "status": "pass",
+      "status": "reject",
       "scale": 1.0,
       "metrics": {
         "bone_left_upper_arm": {
@@ -96,9 +99,7 @@
           "candidate": 200.9,
           "deviation": 0.4334,
           "tolerance": 0.04,
-          "group": "bone_length",
-          "excluded": true,
-          "exclusionReason": "Рабочая рука поднята над головой: длина в проекции меняется из-за ракурса и позы."
+          "group": "bone_length"
         },
         "bone_left_forearm": {
           "reference": 195.369,
@@ -114,9 +115,7 @@
           "candidate": 173.277,
           "deviation": 0.0169,
           "tolerance": 0.04,
-          "group": "bone_length",
-          "excluded": true,
-          "exclusionReason": "Рабочая рука выпрямлена над головой: длина в проекции меняется из-за ракурса и позы."
+          "group": "bone_length"
         },
         "bone_left_thigh": {
           "reference": 314.0,
@@ -147,50 +146,46 @@
           "group": "bone_length"
         },
         "left_biceps": {
-          "reference": 79.0,
-          "candidate": 92.0,
-          "deviation": 0.1646,
+          "reference": 46.0,
+          "candidate": 56.0,
+          "deviation": 0.2174,
           "tolerance": 0.07,
           "group": "limb_width",
           "excluded": true,
           "exclusionReason": "Плечевой пояс поднят и развёрнут, а сечение попадает на край рукава; толщина несопоставима с rack-позой."
         },
         "right_biceps": {
-          "reference": 101.0,
-          "candidate": 101.0,
-          "deviation": 0.0,
+          "reference": 51.0,
+          "candidate": 65.0,
+          "deviation": 0.2745,
           "tolerance": 0.07,
-          "group": "limb_width",
-          "excluded": true,
-          "exclusionReason": "Рабочая рука поднята и частично перекрывает волосы; поперечное сечение несопоставимо с rack-позой."
+          "group": "limb_width"
         },
         "left_forearm": {
-          "reference": 51.0,
+          "reference": 48.0,
           "candidate": 50.0,
-          "deviation": 0.0196,
+          "deviation": 0.0417,
           "tolerance": 0.07,
           "group": "limb_width"
         },
         "right_forearm": {
-          "reference": 127.0,
-          "candidate": 80.0,
-          "deviation": 0.3701,
+          "reference": 65.0,
+          "candidate": 49.0,
+          "deviation": 0.2462,
           "tolerance": 0.07,
-          "group": "limb_width",
-          "excluded": true,
-          "exclusionReason": "Рабочая рука поднята и удерживает гирю; поперечное сечение несопоставимо с rack-позой."
+          "group": "limb_width"
         },
         "left_thigh": {
-          "reference": 127.0,
-          "candidate": 127.0,
-          "deviation": 0.0,
+          "reference": 101.0,
+          "candidate": 117.0,
+          "deviation": 0.1584,
           "tolerance": 0.07,
           "group": "limb_width"
         },
         "right_thigh": {
-          "reference": 122.0,
-          "candidate": 120.0,
-          "deviation": 0.0164,
+          "reference": 105.0,
+          "candidate": 88.0,
+          "deviation": 0.1619,
           "tolerance": 0.07,
           "group": "limb_width"
         },
@@ -202,18 +197,25 @@
           "group": "limb_width"
         },
         "right_calf": {
-          "reference": 83.0,
+          "reference": 79.0,
           "candidate": 84.0,
-          "deviation": 0.012,
+          "deviation": 0.0633,
           "tolerance": 0.07,
           "group": "limb_width"
         },
         "head_width": {
-          "reference": 153.0,
-          "candidate": 160.0,
-          "deviation": 0.0458,
-          "tolerance": 0.05,
+          "reference": 118.0,
+          "candidate": 113.0,
+          "deviation": 0.0424,
+          "tolerance": 0.03,
           "group": "head_width"
+        },
+        "head_height": {
+          "reference": 155.438,
+          "candidate": 159.176,
+          "deviation": 0.024,
+          "tolerance": 0.02,
+          "group": "head_height"
         },
         "shoulder_width": {
           "reference": 176.003,

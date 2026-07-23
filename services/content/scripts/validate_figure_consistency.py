@@ -45,14 +45,15 @@ WIDTH_SAMPLES = {
 
 DEFAULT_TOLERANCES = {
     'bone_length': 0.04,
-    'head_width': 0.05,
+    'head_width': 0.03,
+    'head_height': 0.02,
     'shoulder_width': 0.05,
     'torso_width': 0.06,
     'limb_width': 0.07,
     'feet_baseline': 0.01,
 }
 
-NON_EXCLUDABLE_METRICS = {'head_width', 'shoulder_width', 'torso_width', 'feet_baseline'}
+NON_EXCLUDABLE_METRICS = {'head_width', 'head_height', 'shoulder_width', 'torso_width', 'feet_baseline'}
 
 
 def _point(landmarks: dict[str, list[float]], name: str) -> Point:
@@ -92,7 +93,7 @@ def _section_width(mask: Image.Image, a: Point, b: Point, position: float) -> fl
     widths: list[float] = []
     # Не позволяем сечению «захватить» соседнюю ногу, вторую руку или корпус.
     # Радиус измерения привязан к длине конкретного сегмента.
-    radius = max(12, min(90, round(length * 0.36)))
+    radius = max(12, min(60, round(length * 0.18)))
     for along in (-0.035, -0.0175, 0.0, 0.0175, 0.035):
         sample_center = (center[0] + dx * along, center[1] + dy * along)
         occupied = {
@@ -165,7 +166,8 @@ def measure(frame: dict[str, Any], manifest_dir: Path) -> dict[str, Any]:
         'limbWidths': limb_widths,
         # Ограничиваем сечение областью головы: в overhead-позе поднятая рука
         # или гиря может касаться волос и ошибочно расширять непрерывную alpha-область.
-        'headWidth': _horizontal_width(mask, head_center[1], head_center[0], head_height * 0.7),
+        'headWidth': _horizontal_width(mask, head_center[1], head_center[0], head_height * 0.4),
+        'headHeight': head_height,
         'shoulderWidth': _distance(*shoulders),
         'torsoWidth': _distance(*hips),
         'feetBaseline': feet_y / height,
@@ -178,11 +180,17 @@ def compare(
     tolerances: dict[str, float],
     exclusions: dict[str, str] | None = None,
     scale_mode: str = 'estimated',
+    working_side: str | None = None,
 ) -> dict[str, Any]:
     if reference['canvas'] != candidate['canvas']:
         return {'status': 'reject', 'reason': 'canvas_mismatch', 'metrics': {}}
     exclusions = exclusions or {}
     forbidden_exclusions = set(exclusions) & NON_EXCLUDABLE_METRICS
+    if working_side in {'left', 'right'}:
+        forbidden_exclusions |= set(exclusions) & {
+            f'bone_{working_side}_upper_arm',
+            f'bone_{working_side}_forearm',
+        }
     if forbidden_exclusions:
         raise ValueError(f'Нельзя исключать обязательные метрики: {sorted(forbidden_exclusions)}')
     if scale_mode not in {'estimated', 'fixed'}:
@@ -221,6 +229,7 @@ def compare(
     for name in WIDTH_SAMPLES:
         add(name, reference['limbWidths'][name], candidate['limbWidths'][name], tolerances['limb_width'], 'limb_width')
     add('head_width', reference['headWidth'], candidate['headWidth'], tolerances['head_width'], 'head_width')
+    add('head_height', reference['headHeight'], candidate['headHeight'], tolerances['head_height'], 'head_height')
     add('shoulder_width', reference['shoulderWidth'], candidate['shoulderWidth'], tolerances['shoulder_width'], 'shoulder_width')
     add('torso_width', reference['torsoWidth'], candidate['torsoWidth'], tolerances['torso_width'], 'torso_width')
     add('feet_baseline', reference['feetBaseline'], candidate['feetBaseline'], tolerances['feet_baseline'], 'feet_baseline', False)
@@ -241,6 +250,7 @@ def run(manifest_path: Path) -> dict[str, Any]:
     frames = manifest['frames']
     reference_id = manifest['referenceFrame']
     scale_mode = manifest.get('scaleMode', 'estimated')
+    working_side = manifest.get('workingSide')
     measured = {frame['id']: measure(frame, manifest_path.parent) for frame in frames}
     if reference_id not in measured:
         raise ValueError(f'Не найден referenceFrame {reference_id!r}')
@@ -252,6 +262,7 @@ def run(manifest_path: Path) -> dict[str, Any]:
             tolerances,
             frames_by_id[frame_id].get('excludeMetrics', {}),
             scale_mode,
+            working_side,
         )
         for frame_id, values in measured.items()
         if frame_id != reference_id

@@ -46,6 +46,7 @@ class FigureConsistencyTest(unittest.TestCase):
             'bones': {name: 10.0 for name in validator.BONES},
             'limbWidths': {name: 10.0 for name in validator.WIDTH_SAMPLES},
             'headWidth': 10.0,
+            'headHeight': 10.0,
             'shoulderWidth': 10.0,
             'torsoWidth': 10.0,
             'feetBaseline': 0.9,
@@ -59,6 +60,26 @@ class FigureConsistencyTest(unittest.TestCase):
         self.assertEqual(estimated['scale'], 0.5)
         self.assertEqual(fixed['scale'], 1.0)
         self.assertEqual(fixed['status'], 'reject')
+
+    def test_working_arm_cannot_be_excluded(self) -> None:
+        measurement = {
+            'canvas': [100, 100],
+            'bones': {name: 10.0 for name in validator.BONES},
+            'limbWidths': {name: 10.0 for name in validator.WIDTH_SAMPLES},
+            'headWidth': 10.0,
+            'headHeight': 10.0,
+            'shoulderWidth': 10.0,
+            'torsoWidth': 10.0,
+            'feetBaseline': 0.9,
+        }
+        with self.assertRaisesRegex(ValueError, 'обязательные метрики'):
+            validator.compare(
+                measurement,
+                measurement,
+                validator.DEFAULT_TOLERANCES,
+                {'bone_right_forearm': 'pose'},
+                working_side='right',
+            )
 
     def test_passes_same_body_and_rejects_changed_calf_and_biceps(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
