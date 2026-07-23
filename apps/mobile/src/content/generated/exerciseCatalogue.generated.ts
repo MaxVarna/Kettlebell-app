@@ -1446,29 +1446,8 @@ export const generatedExerciseRecords = [
         "technique": "Отвести таз назад и провести гирю правой рукой между бёдрами, сохраняя длинную руку и нейтральную спину."
       },
       {
-        "id": "snatch-insertion",
-        "order": 2,
-        "visual": {
-          "scale": 1.0,
-          "assets": {
-            "male": "assets/movements/snatch-high-pull-male-anchored-v1.png",
-            "female": "assets/movements/snatch-insertion-female-anchored-v2.png"
-          },
-          "status": "reviewed",
-          "feetBaseline": 0.1
-        },
-        "poseBrief": {
-          "support": "bilateral",
-          "bodyPosition": "Таз почти разогнут; корпус вертикален; свободная рука уравновешивает движение.",
-          "bodyOrientation": "three_quarter",
-          "kettlebellPosition": "Близко к корпусу на уровне груди; правый локоть ведёт движение, гиря не уходит далеко вперёд."
-        },
-        "shortName": "Подрыв",
-        "technique": "Мощно разогнуть таз, провести гирю близко к корпусу и направить локоть вверх, начиная продевание кисти в рукоять."
-      },
-      {
         "id": "snatch-lockout",
-        "order": 3,
+        "order": 2,
         "visual": {
           "scale": 1.0,
           "assets": {
@@ -1485,11 +1464,11 @@ export const generatedExerciseRecords = [
           "kettlebellPosition": "Над правым плечом; гиря лежит за нейтральным запястьем, локоть полностью контролируемо разогнут."
         },
         "shortName": "Фиксация",
-        "technique": "Продеть кисть в рукоять и мягко зафиксировать гирю над правым плечом на прямой руке."
+        "technique": "Мощно разогнуть таз, провести гирю близко к корпусу, продеть кисть в рукоять и мягко зафиксировать гирю над правым плечом на прямой руке."
       }
     ],
     "review": {
-      "notes": "Трёхфазная запись правой рукой; промежуточный кадр показывает близкую траекторию и продевание кисти.",
+      "notes": "Две визуальные фазы правой рукой: нижний замах и верхняя фиксация. Подрыв и продевание кисти описываются техникой, но не выделяются в отдельный кадр.",
       "phases": "reviewed",
       "anatomy": "reviewed",
       "visuals": "reviewed",
@@ -1520,8 +1499,7 @@ export const generatedExerciseRecords = [
         "supports": [
           "cue.snatch-close",
           "cue.snatch-hips",
-          "phase.snatch-hike.technique",
-          "phase.snatch-insertion.technique"
+          "phase.snatch-hike.technique"
         ],
         "accessedAt": "2026-07-23",
         "sourceType": "professional_standard",
@@ -1726,12 +1704,10 @@ export const generatedExerciseVisuals: Readonly<Record<string, ExerciseVisualSet
     frames: {
       male: [
         require('../../../assets/movements/clean-press-low-coherent-anchored-v1.png'),
-        require('../../../assets/movements/snatch-high-pull-male-anchored-v1.png'),
         require('../../../assets/movements/clean-press-overhead-coherent-anchored-v1.png'),
       ],
       female: [
         require('../../../assets/movements/clean-press-low-female-anchored-v3.png'),
-        require('../../../assets/movements/snatch-insertion-female-anchored-v2.png'),
         require('../../../assets/movements/clean-press-overhead-female-anchored-v2.png'),
       ],
     },
